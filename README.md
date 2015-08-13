@@ -9,8 +9,22 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
 ````
 
 ## Installation
+1.  Clone this repository.
+2.  [Build package](https://wiki.archlinux.org/index.php/Makepkg):
+  
+    ````
+    makepkg -sL  
+    ````
 
-1.  Add `rpi-cirrus-wm5102` overlay tree to `options.txt` file:
+    Compilation takes long time. Consider using `distccd` or/and `ccache`.
+
+3.  Install package:
+
+    ````
+    pacman -U linux-raspberrypi-wsp-4.1.3-1-armv6h.pkg.tar.xz
+    ````
+
+4.  Add `rpi-cirrus-wm5102` overlay tree to `options.txt` file:
 
     ````
     # See /boot/overlays/README for a detailed list and description of additional
@@ -19,7 +33,7 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
     dtoverlay=rpi-cirrus-wm5102
     ````
 
-2.  Optionally edit `/etc/modules-load.d/raspberrypi.conf` file to prevent loading of `snd-bcm2835` kernel module:
+4.  Optionally edit `/etc/modules-load.d/raspberrypi.conf` file to prevent loading of `snd-bcm2835` kernel module:
 
     ````
     bcm2708-rng
