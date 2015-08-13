@@ -1,5 +1,10 @@
 # Linux kernel package with Cirrus Logic (Wolfson) audio card support
 
+Based on a modified Linux kernel source taken from https://github.com/HiassofT/rpi-linux/tree/cirrus-4.1.y.
+
+This `PKGBUILD` brings you this kernel to [ArchLinux ARM](http://archlinuxarm.org/platforms/armv6/raspberry-pi) OS.
+
+
 ````
 [wolfsound@wolfsound ~]$ aplay -l
 **** List of PLAYBACK Hardware Devices ****
