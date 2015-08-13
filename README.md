@@ -44,3 +44,6 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
     bcm2708-rng
     #snd-bcm2835
     ````
+----
+
+Useful scripts: [CirrusLogic/wiki-content](https://github.com/CirrusLogic/wiki-content).
