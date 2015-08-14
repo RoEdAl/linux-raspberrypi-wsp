@@ -34,7 +34,7 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
     pacman -U linux-raspberrypi-wsp-4.1.3-1-armv6h.pkg.tar.xz
     ````
 
-4.  Add `rpi-cirrus-wm5102` [overlay tree](http://www.element14.com/community/docs/DOC-71261#overview) to `/boot/options.txt` file:
+4.  Add `rpi-cirrus-wm5102` [overlay tree](https://www.raspberrypi.org/documentation/configuration/device-tree.md) to `/boot/options.txt` file:
 
     ````
     # See /boot/overlays/README for a detailed list and description of additional
