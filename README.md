@@ -1,4 +1,4 @@
-# Linux kernel package with Cirrus Logic (Wolfson) audio card support
+# Linux kernel package with Cirrus Logic (Wolfson) Audio Card support
 
 * [Wolfson Audio Card for Raspberry Pi B](http://www.element14.com/community/docs/DOC-55903)
 * [Wolfson Audio Card for Raspberry Pi 2/B+/A+](http://www.element14.com/community/docs/DOC-71261)
@@ -7,7 +7,7 @@
 
 Modified Linux kernel source: [HiassofT/rpi-linux](https://github.com/HiassofT/rpi-linux/tree/cirrus-4.1.y).
 
-This `PKGBUILD` brings you this kernel to [ArchLinux ARM](http://archlinuxarm.org/platforms/armv6/raspberry-pi) OS. It is based on PKGBUILD from [ArchLinux ARM repository](https://github.com/archlinuxarm/PKGBUILDs/raw/master/core/linux-raspberrypi/PKGBUILD).
+This `PKGBUILD` brings you this kernel to [ArchLinux ARM](http://archlinuxarm.org/platforms/armv6/raspberry-pi) OS. It is based on `PKGBUILD` from [ArchLinux ARM repository](https://github.com/archlinuxarm/PKGBUILDs/raw/master/core/linux-raspberrypi/PKGBUILD).
 
 
 ````
