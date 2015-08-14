@@ -20,9 +20,15 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
 
 ## Installation
 1.  Clone this repository.
+
+    ````
+    git clone https://github.com/RoEdAl/linux-raspberrypi-wsp.git
+    ````
+
 2.  [Build package](https://wiki.archlinux.org/index.php/Makepkg):
   
     ````
+    cd linux-raspberrypi-wsp
     makepkg -sL  
     ````
 
@@ -43,12 +49,19 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
     dtoverlay=rpi-cirrus-wm5102
     ````
 
-4.  Optionally edit `/etc/modules-load.d/raspberrypi.conf` file to prevent loading of `snd-bcm2835` kernel module:
+4.  Optionally edit `/etc/modules-load.d/raspberrypi.conf` file to prevent loading of [`snd-bcm2835`](https://wiki.archlinux.org/index.php/Raspberry_Pi#Audio) kernel module:
 
     ````
     bcm2708-rng
     #snd-bcm2835
     ````
+    
+5. Reboot:
+
+    ````
+    sudo reboot
+    ````
+
 ----
 
 Useful scripts: [CirrusLogic/wiki-content](https://github.com/CirrusLogic/wiki-content).
