@@ -11,11 +11,11 @@
 buildarch=20
 
 pkgbase=linux-raspberrypi-wsp
-_commit=ef3481875df9ddb94982965bc5d77c4ebece3318
+_commit=4d1375f1ecfa193750649867c8cf5293001c3bce
 _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
-pkgver=4.1.3
+pkgver=4.1.6
 pkgrel=1
 bfqver=v7r8
 arch=('armv6h' 'armv7h')
@@ -30,18 +30,22 @@ source=("https://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
         "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0003-block-bfq-add-Early-Queue-Merge-EQM-to-BFQ-${bfqver}-for-${pkgver%.*}.0.patch"
         'config.txt'
         'cmdline.txt'
-        'config.v6'
-        'config.v7'
+        'https://github.com/archlinuxarm/PKGBUILDs/raw/d965c40a1fc5bc6926fb126ea69894db10032684/core/linux-raspberrypi/config.v6'
+        'config.v6.patch'
+        'https://github.com/archlinuxarm/PKGBUILDs/raw/d965c40a1fc5bc6926fb126ea69894db10032684/core/linux-raspberrypi/config.v7'
+        'config.v7.patch'
         'snd-soc-rpi-wsp.conf')
-md5sums=('39c76e91b560738fa16704efc8968f93'
+md5sums=('3578a51d52e4e332c329ebb36bd99d94'
          'SKIP'
          '74bf103542cbdee0363819309adb97a2'
          'f09baae3c7add4ed9bedde22ae3efe19'
          'bd8cc19a31d1cf8aeeaf9245057c4f9b'
          '9a3c82da627b317ec79c37fd6afba569'
          '60bc3624123c183305677097bcd56212'
-         'e22fd2e2886b2631ab7dcfc7fa45d2a5'
-         '07fb0ec18d72c97a68d843ee4d22c4fd'
+         'c6f8aa3dbc2605d55582dc4748c04494'
+         'd1e8e80c2993e2495c47b6d0068986f9'
+         '9834444d41340a79a10b81f2db3ef1e1'
+         'b11d0ba07ee58be7deb5f22362b2591c'
          '61880f2ef211b07630268161755d15fd')
 
 prepare() {
@@ -65,7 +69,9 @@ prepare() {
 
   msg "Prepare to build"
   [[ $CARCH == "armv6h" ]] && cat "${srcdir}/config.v6" > ./.config
+  [[ $CARCH == "armv6h" ]] && patch "./.config" < "${srcdir}/config.v6.patch"
   [[ $CARCH == "armv7h" ]] && cat "${srcdir}/config.v7" > ./.config
+  [[ $CARCH == "armv7h" ]] && patch "./config" < "${srcdir}/config.v7.patch"
 
   # add pkgrel to extraversion
   sed -ri "s|^(EXTRAVERSION =)(.*)|\1 \2-${pkgrel}|" Makefile
