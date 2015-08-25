@@ -1,7 +1,7 @@
 # Linux kernel package with Cirrus Logic (Wolfson) Audio Card support
 
 * [Wolfson Audio Card for Raspberry Pi B](http://www.element14.com/community/docs/DOC-55903)
-* [Wolfson Audio Card for Raspberry Pi 2/B+/A+](http://www.element14.com/community/docs/DOC-71261)
+* [Cirrus Logic Audio Card for Raspberry Pi 2/B+/A+](http://www.element14.com/community/docs/DOC-71261)
 
 ----
 
@@ -37,7 +37,7 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
 3.  Install package:
 
     ````
-    pacman -U linux-raspberrypi-wsp-4.1.3-1-armv6h.pkg.tar.xz
+    pacman -U linux-raspberrypi-wsp-4.1.6-1-armv6h.pkg.tar.xz
     ````
 
 4.  Add `rpi-cirrus-wm5102` [overlay tree](https://www.raspberrypi.org/documentation/configuration/device-tree.md) to `/boot/options.txt` file:
@@ -62,6 +62,9 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
     sudo reboot
     ````
 
-----
+## Links
 
-Useful scripts: [CirrusLogic/wiki-content](https://github.com/CirrusLogic/wiki-content).
+* [Experimental OpenELEC Raspberry Pi test builds with support for Wolfson/Cirrus Logic Audio Card](http://www.horus.com/~hias/tmp/openelec-wolfson/)
+  * [Readme](http://www.horus.com/~hias/tmp/openelec-wolfson/00README.txt)
+* [Cirrus Logic's modified Linux kernel source](https://github.com/CirrusLogic/rpi-linux)
+* [Useful mixer scripts](https://github.com/CirrusLogic/wiki-content)
