@@ -16,7 +16,7 @@ _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
 pkgver=4.1.6
-pkgrel=1
+pkgrel=2
 bfqver=v7r8
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
@@ -34,7 +34,7 @@ source=("https://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
         'config.v6.patch'
         'https://github.com/archlinuxarm/PKGBUILDs/raw/d965c40a1fc5bc6926fb126ea69894db10032684/core/linux-raspberrypi/config.v7'
         'config.v7.patch'
-        'snd-soc-rpi-wsp.conf')
+        'cirrus-depends.conf')
 md5sums=('3578a51d52e4e332c329ebb36bd99d94'
          'SKIP'
          '74bf103542cbdee0363819309adb97a2'
@@ -46,7 +46,7 @@ md5sums=('3578a51d52e4e332c329ebb36bd99d94'
          '764b8cba9c6a252be52dbb6987221a66'
          '9834444d41340a79a10b81f2db3ef1e1'
          'e8c62ccd996be4ea54d0ff57b6a0e05b'
-         '61880f2ef211b07630268161755d15fd')
+         'fe02b86828a67151c796ac31834717a8')
 
 prepare() {
   cd "${srcdir}/${_srcname}"
@@ -165,7 +165,7 @@ _package() {
   install -m644 ../config.txt ../cmdline.txt "${pkgdir}/boot"
   
   # install modprobe.d files
-  install -m644 ../snd-soc-rpi-wsp.conf "${pkgdir}/etc/modprobe.d"
+  install -m644 ../cirrus-depends.conf "${pkgdir}/etc/modprobe.d"
 }
 
 _package-headers() {
