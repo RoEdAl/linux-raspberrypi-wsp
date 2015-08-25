@@ -43,9 +43,9 @@ md5sums=('3578a51d52e4e332c329ebb36bd99d94'
          '9a3c82da627b317ec79c37fd6afba569'
          '60bc3624123c183305677097bcd56212'
          'c6f8aa3dbc2605d55582dc4748c04494'
-         'd1e8e80c2993e2495c47b6d0068986f9'
+         '764b8cba9c6a252be52dbb6987221a66'
          '9834444d41340a79a10b81f2db3ef1e1'
-         'b11d0ba07ee58be7deb5f22362b2591c'
+         'e8c62ccd996be4ea54d0ff57b6a0e05b'
          '61880f2ef211b07630268161755d15fd')
 
 prepare() {
@@ -71,7 +71,7 @@ prepare() {
   [[ $CARCH == "armv6h" ]] && cat "${srcdir}/config.v6" > ./.config
   [[ $CARCH == "armv6h" ]] && patch "./.config" < "${srcdir}/config.v6.patch"
   [[ $CARCH == "armv7h" ]] && cat "${srcdir}/config.v7" > ./.config
-  [[ $CARCH == "armv7h" ]] && patch "./config" < "${srcdir}/config.v7.patch"
+  [[ $CARCH == "armv7h" ]] && patch "./.config" < "${srcdir}/config.v7.patch"
 
   # add pkgrel to extraversion
   sed -ri "s|^(EXTRAVERSION =)(.*)|\1 \2-${pkgrel}|" Makefile
