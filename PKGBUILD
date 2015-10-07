@@ -11,12 +11,12 @@
 buildarch=20
 
 pkgbase=linux-raspberrypi-wsp
-_commit=4d1375f1ecfa193750649867c8cf5293001c3bce
+_commit=37b3204176e8d62564ee6d8e3a66534ba2bb80a0
 _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
-pkgver=4.1.6
-pkgrel=2
+pkgver=4.1.10
+pkgrel=1
 bfqver=v7r8
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
@@ -30,22 +30,22 @@ source=("https://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
         "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0003-block-bfq-add-Early-Queue-Merge-EQM-to-BFQ-${bfqver}-for-${pkgver%.*}.0.patch"
         'config.txt'
         'cmdline.txt'
-        'https://github.com/archlinuxarm/PKGBUILDs/raw/d965c40a1fc5bc6926fb126ea69894db10032684/core/linux-raspberrypi/config.v6'
+        'https://github.com/archlinuxarm/PKGBUILDs/raw/d0d53c0ee4773717e95cdeb7542c9aaf5a2b5485/core/linux-raspberrypi/config.v6'
         'config.v6.patch'
-        'https://github.com/archlinuxarm/PKGBUILDs/raw/d965c40a1fc5bc6926fb126ea69894db10032684/core/linux-raspberrypi/config.v7'
+        'https://github.com/archlinuxarm/PKGBUILDs/raw/d0d53c0ee4773717e95cdeb7542c9aaf5a2b5485/core/linux-raspberrypi/config.v7'
         'config.v7.patch'
         'cirrus-depends.conf')
-md5sums=('3578a51d52e4e332c329ebb36bd99d94'
+md5sums=('f859689d2e118310aaa96154dfa2b664'
          'SKIP'
          '74bf103542cbdee0363819309adb97a2'
          'f09baae3c7add4ed9bedde22ae3efe19'
          'bd8cc19a31d1cf8aeeaf9245057c4f9b'
          '9a3c82da627b317ec79c37fd6afba569'
          '60bc3624123c183305677097bcd56212'
-         'c6f8aa3dbc2605d55582dc4748c04494'
+         '8303e1402d4f0d51112e71d5e90e29df'
          '764b8cba9c6a252be52dbb6987221a66'
-         '9834444d41340a79a10b81f2db3ef1e1'
-         'e8c62ccd996be4ea54d0ff57b6a0e05b'
+         'b9c7fd8054039cf27c0bd108ec9c185d'
+         'd3d97f74054b44ab4664cf03c1a83064'
          'fe02b86828a67151c796ac31834717a8')
 
 prepare() {
@@ -128,13 +128,13 @@ _package() {
   # get kernel version
   _kernver="$(make kernelrelease)"
 
-  mkdir -p "${pkgdir}"/{lib/modules,lib/firmware,boot/overlays,etc/modprobe.d}
+  mkdir -p "${pkgdir}"/{lib/modules,lib/firmware,etc/modprobe.d}
   make INSTALL_MOD_PATH="${pkgdir}" modules_install
+  make INSTALL_DTBS_PATH="${pkgdir}/boot" dtbs_install
 
   [[ $CARCH == "armv6h" ]] && perl scripts/mkknlimg --dtok arch/$KARCH/boot/zImage "${pkgdir}/boot/kernel.img"
   [[ $CARCH == "armv7h" ]] && perl scripts/mkknlimg --dtok arch/$KARCH/boot/zImage "${pkgdir}/boot/kernel7.img"
-  mv arch/$KARCH/boot/dts/overlays/*.dtb "${pkgdir}/boot/overlays"
-  mv arch/$KARCH/boot/dts/*.dtb "${pkgdir}/boot"
+  cp arch/$KARCH/boot/dts/overlays/README "${pkgdir}/boot/overlays"
 
   # set correct depmod command for install
   sed \
