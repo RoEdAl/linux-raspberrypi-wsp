@@ -16,7 +16,7 @@ _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
 pkgver=4.1.10
-pkgrel=1
+pkgrel=2
 bfqver=v7r8
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
@@ -30,9 +30,9 @@ source=("https://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
         "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0003-block-bfq-add-Early-Queue-Merge-EQM-to-BFQ-${bfqver}-for-${pkgver%.*}.0.patch"
         'config.txt'
         'cmdline.txt'
-        'https://github.com/archlinuxarm/PKGBUILDs/raw/d0d53c0ee4773717e95cdeb7542c9aaf5a2b5485/core/linux-raspberrypi/config.v6'
+        'http://github.com/archlinuxarm/PKGBUILDs/raw/d0d53c0ee4773717e95cdeb7542c9aaf5a2b5485/core/linux-raspberrypi/config.v6'
         'config.v6.patch'
-        'https://github.com/archlinuxarm/PKGBUILDs/raw/d0d53c0ee4773717e95cdeb7542c9aaf5a2b5485/core/linux-raspberrypi/config.v7'
+        'http://github.com/archlinuxarm/PKGBUILDs/raw/d0d53c0ee4773717e95cdeb7542c9aaf5a2b5485/core/linux-raspberrypi/config.v7'
         'config.v7.patch'
         'cirrus-depends.conf')
 md5sums=('f859689d2e118310aaa96154dfa2b664'
@@ -43,9 +43,9 @@ md5sums=('f859689d2e118310aaa96154dfa2b664'
          '9a3c82da627b317ec79c37fd6afba569'
          '60bc3624123c183305677097bcd56212'
          '8303e1402d4f0d51112e71d5e90e29df'
-         '764b8cba9c6a252be52dbb6987221a66'
+         '7abe03c7674e13fb441aac2b4bfeecf7'
          'b9c7fd8054039cf27c0bd108ec9c185d'
-         'd3d97f74054b44ab4664cf03c1a83064'
+         'cedd61a5c82c2d59833576e9e2eb2bf4'
          'fe02b86828a67151c796ac31834717a8')
 
 prepare() {
