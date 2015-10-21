@@ -16,14 +16,14 @@ _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
 pkgver=4.1.10
-pkgrel=2
+pkgrel=2.1
 bfqver=v7r8
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
 license=('GPL2')
 makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'git')
 options=('!strip')
-source=("https://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
+source=("http://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
         "git+https://github.com/sfjro/aufs4-standalone.git#branch=aufs${pkgver%.*}"
         "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0001-block-cgroups-kconfig-build-bits-for-BFQ-${bfqver}-${pkgver%.*}.patch"
         "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0002-block-introduce-the-BFQ-${bfqver}-I-O-sched-for-${pkgver%.*}.patch"
