@@ -16,7 +16,7 @@ _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
 pkgver=4.1.10
-pkgrel=2.1
+pkgrel=2.2
 bfqver=v7r8
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
@@ -43,9 +43,9 @@ md5sums=('f859689d2e118310aaa96154dfa2b664'
          '9a3c82da627b317ec79c37fd6afba569'
          '60bc3624123c183305677097bcd56212'
          '8303e1402d4f0d51112e71d5e90e29df'
-         '7abe03c7674e13fb441aac2b4bfeecf7'
+         '70db7cda20d0d243a42a22b64f28768f'
          'b9c7fd8054039cf27c0bd108ec9c185d'
-         'cedd61a5c82c2d59833576e9e2eb2bf4'
+         '6670fe6c11e1cf8c9373fe220eb40693'
          'fe02b86828a67151c796ac31834717a8')
 
 prepare() {
