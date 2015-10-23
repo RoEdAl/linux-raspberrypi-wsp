@@ -1,7 +1,7 @@
-# Linux kernel package with Cirrus Logic (Wolfson) Audio Card support
+# ArchLinux kernel package with Cirrus Logic (Wolfson) Audio Card support
 
 * [Wolfson Audio Card for Raspberry Pi B](http://www.element14.com/community/docs/DOC-55903)
-* [Cirrus Logic Audio Card for Raspberry Pi 2/B+/A+](http://www.element14.com/community/docs/DOC-71261)
+* [Cirrus Logic Audio Card for Raspberry Pi B+/A+/2](http://www.element14.com/community/docs/DOC-71261)
 
 ----
 
