@@ -22,7 +22,7 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
 1.  Clone this repository.
 
     ````
-    git clone https://github.com/RoEdAl/linux-raspberrypi-wsp.git
+    git clone --depth=1 http://github.com/RoEdAl/linux-raspberrypi-wsp.git
     ````
 
 2.  [Build package](https://wiki.archlinux.org/index.php/Makepkg):
