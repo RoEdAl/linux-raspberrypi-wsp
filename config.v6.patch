@@ -1,13 +1,5 @@
---- config.v6	2015-10-17 00:12:42.140497637 +0200
-+++ config.v6.new	2015-10-20 08:51:28.522328186 +0200
-@@ -1,6 +1,6 @@
- #
- # Automatically generated file; DO NOT EDIT.
--# Linux/arm 4.1.7-1 Kernel Configuration
-+# Linux/arm 4.1.10-2.1 Kernel Configuration
- #
- CONFIG_ARM=y
- CONFIG_SYS_SUPPORTS_APM_EMULATION=y
+--- config.v6	2015-10-26 10:57:31.000000000 +0100
++++ config.v6.new	2015-10-26 10:53:58.000000000 +0100
 @@ -1212,6 +1212,7 @@
  CONFIG_RFKILL=y
  CONFIG_RFKILL_LEDS=y
@@ -80,7 +72,7 @@
  CONFIG_MEDIA_SUPPORT=m
  
  #
-@@ -3349,6 +3384,8 @@
+@@ -3350,6 +3385,8 @@
  CONFIG_SND_BCM2708_SOC_RPI_PROTO=m
  CONFIG_SND_BCM2708_SOC_IQAUDIO_DAC=m
  CONFIG_SND_BCM2708_SOC_RASPIDAC3=m
@@ -89,7 +81,7 @@
  # CONFIG_SND_DESIGNWARE_I2S is not set
  
  #
-@@ -3371,6 +3408,8 @@
+@@ -3372,6 +3409,8 @@
  #
  # CODEC drivers
  #
@@ -98,7 +90,7 @@
  CONFIG_SND_SOC_ADAU1701=m
  # CONFIG_SND_SOC_AK4104 is not set
  # CONFIG_SND_SOC_AK4554 is not set
-@@ -3417,6 +3456,7 @@
+@@ -3418,6 +3457,7 @@
  # CONFIG_SND_SOC_TLV320AIC31XX is not set
  # CONFIG_SND_SOC_TLV320AIC3X is not set
  # CONFIG_SND_SOC_TS3A227E is not set
@@ -106,7 +98,7 @@
  # CONFIG_SND_SOC_WM8510 is not set
  # CONFIG_SND_SOC_WM8523 is not set
  # CONFIG_SND_SOC_WM8580 is not set
-@@ -3773,7 +3813,7 @@
+@@ -3774,7 +3814,7 @@
  # CONFIG_MMC_USDHI6ROL0 is not set
  # CONFIG_MEMSTICK is not set
  CONFIG_NEW_LEDS=y
@@ -115,7 +107,7 @@
  # CONFIG_LEDS_CLASS_FLASH is not set
  
  #
-@@ -3783,7 +3823,7 @@
+@@ -3784,7 +3824,7 @@
  # CONFIG_LEDS_LM3533 is not set
  # CONFIG_LEDS_LM3642 is not set
  # CONFIG_LEDS_PCA9532 is not set
@@ -124,7 +116,7 @@
  # CONFIG_LEDS_LP3944 is not set
  # CONFIG_LEDS_LP5521 is not set
  # CONFIG_LEDS_LP5523 is not set
-@@ -3794,6 +3834,7 @@
+@@ -3795,6 +3835,7 @@
  # CONFIG_LEDS_PCA963X is not set
  # CONFIG_LEDS_DAC124S085 is not set
  # CONFIG_LEDS_PWM is not set
@@ -132,7 +124,7 @@
  # CONFIG_LEDS_BD2802 is not set
  # CONFIG_LEDS_LT3593 is not set
  # CONFIG_LEDS_TCA6507 is not set
-@@ -4248,6 +4289,7 @@
+@@ -4249,6 +4290,7 @@
  CONFIG_AD7887=m
  CONFIG_AD7923=m
  CONFIG_AD799X=m

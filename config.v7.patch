@@ -1,13 +1,5 @@
---- config.v7	2015-10-20 09:26:24.741073498 +0200
-+++ config.v7.new	2015-10-20 10:00:29.884665164 +0200
-@@ -1,6 +1,6 @@
- #
- # Automatically generated file; DO NOT EDIT.
--# Linux/arm 4.1.7-1 Kernel Configuration
-+# Linux/arm 4.1.10-2.1 Kernel Configuration
- #
- CONFIG_ARM=y
- CONFIG_SYS_SUPPORTS_APM_EMULATION=y
+--- config.v7	2015-10-26 11:21:31.000000000 +0100
++++ config.v7.new	2015-10-26 11:19:15.000000000 +0100
 @@ -1304,6 +1304,7 @@
  CONFIG_RFKILL=y
  CONFIG_RFKILL_LEDS=y
@@ -80,7 +72,7 @@
  CONFIG_MEDIA_SUPPORT=m
  
  #
-@@ -3441,6 +3476,8 @@
+@@ -3442,6 +3477,8 @@
  CONFIG_SND_BCM2708_SOC_RPI_PROTO=m
  CONFIG_SND_BCM2708_SOC_IQAUDIO_DAC=m
  CONFIG_SND_BCM2708_SOC_RASPIDAC3=m
@@ -89,7 +81,7 @@
  # CONFIG_SND_DESIGNWARE_I2S is not set
  
  #
-@@ -3463,6 +3500,8 @@
+@@ -3464,6 +3501,8 @@
  #
  # CODEC drivers
  #
@@ -98,7 +90,7 @@
  CONFIG_SND_SOC_ADAU1701=m
  # CONFIG_SND_SOC_AK4104 is not set
  # CONFIG_SND_SOC_AK4554 is not set
-@@ -3509,6 +3548,7 @@
+@@ -3510,6 +3549,7 @@
  # CONFIG_SND_SOC_TLV320AIC31XX is not set
  # CONFIG_SND_SOC_TLV320AIC3X is not set
  # CONFIG_SND_SOC_TS3A227E is not set
@@ -106,7 +98,7 @@
  # CONFIG_SND_SOC_WM8510 is not set
  # CONFIG_SND_SOC_WM8523 is not set
  # CONFIG_SND_SOC_WM8580 is not set
-@@ -3886,6 +3926,7 @@
+@@ -3887,6 +3927,7 @@
  # CONFIG_LEDS_PCA963X is not set
  # CONFIG_LEDS_DAC124S085 is not set
  # CONFIG_LEDS_PWM is not set
@@ -114,7 +106,7 @@
  # CONFIG_LEDS_BD2802 is not set
  # CONFIG_LEDS_LT3593 is not set
  # CONFIG_LEDS_TCA6507 is not set
-@@ -4341,6 +4382,7 @@
+@@ -4342,6 +4383,7 @@
  CONFIG_AD7887=m
  CONFIG_AD7923=m
  CONFIG_AD799X=m

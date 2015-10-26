@@ -11,12 +11,12 @@
 buildarch=20
 
 pkgbase=linux-raspberrypi-wsp
-_commit=37b3204176e8d62564ee6d8e3a66534ba2bb80a0
+_commit=babe9c370481bab94663118533cb6aa33a2385f1
 _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
-pkgver=4.1.10
-pkgrel=2.2
+pkgver=4.1.11
+pkgrel=1
 bfqver=v7r8
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
@@ -30,22 +30,22 @@ source=("http://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
         "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0003-block-bfq-add-Early-Queue-Merge-EQM-to-BFQ-${bfqver}-for-${pkgver%.*}.0.patch"
         'config.txt'
         'cmdline.txt'
-        'http://github.com/archlinuxarm/PKGBUILDs/raw/d0d53c0ee4773717e95cdeb7542c9aaf5a2b5485/core/linux-raspberrypi/config.v6'
+        'http://github.com/archlinuxarm/PKGBUILDs/raw/dc24d546752f0575bd689d6875c45ff101717164/core/linux-raspberrypi/config.v6'
         'config.v6.patch'
-        'http://github.com/archlinuxarm/PKGBUILDs/raw/d0d53c0ee4773717e95cdeb7542c9aaf5a2b5485/core/linux-raspberrypi/config.v7'
+        'http://github.com/archlinuxarm/PKGBUILDs/raw/dc24d546752f0575bd689d6875c45ff101717164/core/linux-raspberrypi/config.v7'
         'config.v7.patch'
         'cirrus-depends.conf')
-md5sums=('f859689d2e118310aaa96154dfa2b664'
+md5sums=('ee3c5af9358474fd9b0a9e7cb8da6534'
          'SKIP'
          '74bf103542cbdee0363819309adb97a2'
          'f09baae3c7add4ed9bedde22ae3efe19'
          'bd8cc19a31d1cf8aeeaf9245057c4f9b'
          '9a3c82da627b317ec79c37fd6afba569'
          '60bc3624123c183305677097bcd56212'
-         '8303e1402d4f0d51112e71d5e90e29df'
-         '70db7cda20d0d243a42a22b64f28768f'
-         'b9c7fd8054039cf27c0bd108ec9c185d'
-         '6670fe6c11e1cf8c9373fe220eb40693'
+         '35040e65fcbcb3d22001d6d9727971f2'
+         '2afe3a7c3b1155c7a415178d63acb656'
+         '1f8fc3d9f7c659760fb058bc51d42e54'
+         'c96dcd5fd780756f110253ede6a82118'
          'fe02b86828a67151c796ac31834717a8')
 
 prepare() {
