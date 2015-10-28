@@ -32,7 +32,8 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
     makepkg -sL  
     ````
 
-    Compilation takes long time. Consider using `distccd` or/and `ccache`.
+    Compilation takes long time. Consider using [`distccd`](http://archlinuxarm.org/developers/distcc-cross-compiling) or/and `ccache`.
+    You may also compile this package on a PC using [QEMU Chroot](https://wiki.archlinux.org/index.php/Raspberry_Pi#QEMU_chroot).
 
 3.  Install package:
 
