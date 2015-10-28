@@ -16,7 +16,7 @@ _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
 pkgver=4.1.11
-pkgrel=1.1
+pkgrel=1.2
 bfqver=v7r8
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
@@ -28,8 +28,8 @@ source=("http://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
         "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0001-block-cgroups-kconfig-build-bits-for-BFQ-${bfqver}-${pkgver%.*}.patch"
         "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0002-block-introduce-the-BFQ-${bfqver}-I-O-sched-for-${pkgver%.*}.patch"
         "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0003-block-bfq-add-Early-Queue-Merge-EQM-to-BFQ-${bfqver}-for-${pkgver%.*}.0.patch"
-        'config.txt'
-        'cmdline.txt'
+        'http://github.com/archlinuxarm/PKGBUILDs/raw/83cf211cdbb42fa2a1cce8bb307a49128e040f93/core/linux-raspberrypi/config.txt'
+        'http://github.com/archlinuxarm/PKGBUILDs/raw/f4290fd8a8dfe7af169163d757c8d55c3fdb5ddc/core/linux-raspberrypi/cmdline.txt'
         'http://github.com/archlinuxarm/PKGBUILDs/raw/dc24d546752f0575bd689d6875c45ff101717164/core/linux-raspberrypi/config.v6'
         'config.v6.patch'
         'http://github.com/archlinuxarm/PKGBUILDs/raw/dc24d546752f0575bd689d6875c45ff101717164/core/linux-raspberrypi/config.v7'
