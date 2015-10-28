@@ -16,7 +16,7 @@ _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
 pkgver=4.1.11
-pkgrel=1
+pkgrel=1.1
 bfqver=v7r8
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
@@ -34,7 +34,7 @@ source=("http://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
         'config.v6.patch'
         'http://github.com/archlinuxarm/PKGBUILDs/raw/dc24d546752f0575bd689d6875c45ff101717164/core/linux-raspberrypi/config.v7'
         'config.v7.patch'
-        'cirrus-depends.conf')
+        'cirrus.conf')
 md5sums=('ee3c5af9358474fd9b0a9e7cb8da6534'
          'SKIP'
          '74bf103542cbdee0363819309adb97a2'
@@ -165,7 +165,7 @@ _package() {
   install -m644 ../config.txt ../cmdline.txt "${pkgdir}/boot"
   
   # install modprobe.d files
-  install -m644 ../cirrus-depends.conf "${pkgdir}/etc/modprobe.d"
+  install -m644 ../cirrus.conf "${pkgdir}/etc/modprobe.d"
 }
 
 _package-headers() {

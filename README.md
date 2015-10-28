@@ -43,20 +43,23 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
 4.  Add `rpi-cirrus-wm5102` [overlay tree](https://www.raspberrypi.org/documentation/configuration/device-tree.md) to `/boot/options.txt` file:
 
     ````
-    # See /boot/overlays/README for a detailed list and description of additional
-    #   overlays and their configuration options.
-    #
     dtoverlay=rpi-cirrus-wm5102
     ````
 
-4.  Optionally edit `/etc/modules-load.d/raspberrypi.conf` file to prevent loading of [`snd-bcm2835`](https://wiki.archlinux.org/index.php/Raspberry_Pi#Audio) kernel module:
+5.  Optionally add `mmap` support to `/boot/options.txt` file:
+
+    ````
+    dtoverlay=i2s-mmap
+    ````
+
+6.  Optionally edit `/etc/modules-load.d/raspberrypi.conf` file to prevent loading of [`snd-bcm2835`](https://wiki.archlinux.org/index.php/Raspberry_Pi#Audio) kernel module:
 
     ````
     bcm2708-rng
     #snd-bcm2835
     ````
     
-5. Reboot:
+7. Reboot:
 
     ````
     sudo reboot
@@ -68,3 +71,4 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
   * [Readme](http://www.horus.com/~hias/tmp/openelec-wolfson/00README.txt)
 * [Cirrus Logic's modified Linux kernel source](https://github.com/CirrusLogic/rpi-linux)
 * [Useful mixer scripts](https://github.com/CirrusLogic/wiki-content)
+* [Driver fixes and updates to kernel 3.18.16 and 4.0.5 - element14 community](http://www.element14.com/community/thread/43711/l/driver-fixes-and-updates-to-kernel-31816-and-405?displayFullThread=true)
