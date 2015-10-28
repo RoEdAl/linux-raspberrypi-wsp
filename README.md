@@ -69,6 +69,8 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
 
 * [Experimental OpenELEC Raspberry Pi test builds with support for Wolfson/Cirrus Logic Audio Card](http://www.horus.com/~hias/tmp/openelec-wolfson/)
   * [Readme](http://www.horus.com/~hias/tmp/openelec-wolfson/00README.txt)
+* [element14 community - Driver fixes and updates to kernel 3.18.16 and 4.0.5](http://www.element14.com/community/thread/43711/l/driver-fixes-and-updates-to-kernel-31816-and-405?displayFullThread=true)
 * [Cirrus Logic's modified Linux kernel source](https://github.com/CirrusLogic/rpi-linux)
 * [Useful mixer scripts](https://github.com/CirrusLogic/wiki-content)
-* [Driver fixes and updates to kernel 3.18.16 and 4.0.5 - element14 community](http://www.element14.com/community/thread/43711/l/driver-fixes-and-updates-to-kernel-31816-and-405?displayFullThread=true)
+* [Cirrus Logic Audio Card on Raspberry Pi 2 with Debian Jessie](https://stmllr.net/blog/cirrus-logic-audio-card-on-raspberry-pi2-with-debian-jessie)
+* [raspberrypi/linux - bcm2708-i2s lacks mmap support](https://github.com/raspberrypi/linux/issues/1004)
