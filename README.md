@@ -21,11 +21,10 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
 ## Installation
 1.  Clone this repository.
 
-    ````
-    git clone --depth=1 http://github.com/RoEdAl/linux-raspberrypi-wsp.git
-    ````
-
-2.  [Build package](https://wiki.archlinux.org/index.php/Makepkg):
+  ````
+  git clone --depth=1 http://github.com/RoEdAl/linux-raspberrypi-wsp.git
+  ````
+1.  [Build package](https://wiki.archlinux.org/index.php/Makepkg):
   
     ````
     cd linux-raspberrypi-wsp
@@ -35,36 +34,42 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
     Compilation takes long time. Consider using [`distccd`](http://archlinuxarm.org/developers/distcc-cross-compiling) or/and `ccache`.
     You may also compile this package on a PC using [QEMU Chroot](https://wiki.archlinux.org/index.php/Raspberry_Pi#QEMU_chroot).
 
-3.  Install package:
+1.  Install kernel package:
 
-    ````
-    pacman -U linux-raspberrypi-wsp-4.1.6-1-armv6h.pkg.tar.xz
-    ````
-
-4.  Add `rpi-cirrus-wm5102` [overlay tree](https://www.raspberrypi.org/documentation/configuration/device-tree.md) to `/boot/options.txt` file:
-
-    ````
-    dtoverlay=rpi-cirrus-wm5102
-    ````
-
-5.  Optionally add `mmap` support to `/boot/options.txt` file:
-
-    ````
-    dtoverlay=i2s-mmap
-    ````
-
-6.  Optionally edit `/etc/modules-load.d/raspberrypi.conf` file to prevent loading of [`snd-bcm2835`](https://wiki.archlinux.org/index.php/Raspberry_Pi#Audio) kernel module:
-
-    ````
-    bcm2708-rng
-    #snd-bcm2835
-    ````
+  ````
+  pacman -U linux-raspberrypi-wsp-4.1.6-1-armv6h.pkg.tar.xz
+  ````
     
-7. Reboot:
+  Optionally install kernel headers package (for developers only):
+  
+  ````
+  pacman -U linux-raspberrypi-wsp-headers-4.1.6-1-armv6h.pkg.tar.xz
+  ````
 
-    ````
-    sudo reboot
-    ````
+1.  Add `rpi-cirrus-wm5102` [overlay tree](https://www.raspberrypi.org/documentation/configuration/device-tree.md) to `/boot/options.txt` file:
+
+  ````
+  dtoverlay=rpi-cirrus-wm5102
+  ````
+
+  Optionally add **mmap** support:
+
+  ````
+  dtoverlay=i2s-mmap
+  ````
+
+1.  Edit `/etc/modules-load.d/raspberrypi.conf` file to prevent loading of [`snd-bcm2835`](https://wiki.archlinux.org/index.php/Raspberry_Pi#Audio) kernel module (optional):
+
+  ````
+  bcm2708-rng
+  #snd-bcm2835
+  ````
+    
+1. Reboot:
+
+  ````
+  sudo reboot
+  ````
 
 ## Links
 
