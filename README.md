@@ -1,11 +1,15 @@
 # ArchLinux kernel package with Cirrus Logic (Wolfson) Audio Card support
 
+Supported devices:
+
 * [Wolfson Audio Card for Raspberry Pi B](http://www.element14.com/community/docs/DOC-55903)
 * [Cirrus Logic Audio Card for Raspberry Pi B+/A+/2](http://www.element14.com/community/docs/DOC-71261)
 
 ----
 
 Modified Linux kernel source: [HiassofT/rpi-linux](https://github.com/HiassofT/rpi-linux/tree/cirrus-4.1.y).
+
+----
 
 This `PKGBUILD` brings you this kernel to [ArchLinux ARM](http://archlinuxarm.org/platforms/armv6/raspberry-pi) OS. It is based on `PKGBUILD` from [ArchLinux ARM repository](https://github.com/archlinuxarm/PKGBUILDs/raw/master/core/linux-raspberrypi/PKGBUILD).
 
@@ -18,7 +22,7 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
   Subdevice #0: subdevice #0
 ````
 
-## Installation
+# Installation
 1.  Clone this repository.
 
   ````
@@ -71,7 +75,7 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
   sudo reboot
   ````
 
-## Links
+# Links
 
 * [Experimental OpenELEC Raspberry Pi test builds with support for Wolfson/Cirrus Logic Audio Card](http://www.horus.com/~hias/tmp/openelec-wolfson/)
   * [Readme](http://www.horus.com/~hias/tmp/openelec-wolfson/00README.txt)
