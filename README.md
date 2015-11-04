@@ -2,8 +2,8 @@
 
 Supported devices:
 
-* [Wolfson Audio Card for Raspberry Pi B](http://www.element14.com/community/docs/DOC-55903)
-* [Cirrus Logic Audio Card for Raspberry Pi B+/A+/2](http://www.element14.com/community/docs/DOC-71261)
+* [Wolfson Audio Card](http://www.element14.com/wolfson) for Raspberry Pi B
+* [Cirrus Logic Audio Card](http://www.element14.com/cirruslogic_ac) for Raspberry Pi B+/A+/2
 
 ----
 
