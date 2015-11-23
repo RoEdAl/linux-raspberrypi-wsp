@@ -5,6 +5,12 @@
 *.log
 *.log.*
 *.sig
+*.patch
+
+cmdline.txt
+config.txt
+config.v6
+config.v7
 
 # AUR metadata
 .AURINFO
@@ -12,3 +18,4 @@
 
 pkg/
 src/
+aufs4-standalone/
