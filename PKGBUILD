@@ -16,7 +16,7 @@ _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
 pkgver=4.1.13
-pkgrel=1
+pkgrel=1.1
 bfqver=v7r8
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
@@ -43,10 +43,10 @@ md5sums=('cb1e94729aad3fc026ffbd966be5ad5d'
          '9a3c82da627b317ec79c37fd6afba569'
          '60bc3624123c183305677097bcd56212'
          '35040e65fcbcb3d22001d6d9727971f2'
-         'b056df465b153c34923e4dddce1b0502'
+         '82e3ae43b6cf0c05e828044b54e9b7a6'
          '1f8fc3d9f7c659760fb058bc51d42e54'
-         '2b89c25899504371b93967eb0ab8bb9b'
-         'fe02b86828a67151c796ac31834717a8')
+         'd9cfde60747189736632349c32d85080'
+         '71bc3a50eb404709ff78f393aed3d0e8')
 
 prepare() {
   cd "${srcdir}/${_srcname}"
@@ -146,13 +146,16 @@ _package() {
   rm -f "${pkgdir}"/lib/modules/${_kernver}/{source,build}
   # remove the firmware
   rm -rf "${pkgdir}/lib/firmware"
-  # gzip -9 all modules to save 100MB of space
-  find "${pkgdir}" -name '*.ko' |xargs -P 2 -n 1 gzip -9
+
+  # xz all modules to save space
+  _ncores="$(getconf _NPROCESSORS_ONLN)"
+  find "${pkgdir}" -name '*.ko' |xargs -P ${_ncores} -n 1 xz -C crc32 -6e
+
   # make room for external modules
-  ln -s "../extramodules-${pkgver}-${_kernelname:-ARCH}" "${pkgdir}/lib/modules/${_kernver}/extramodules"
+  ln -s "../extramodules-${pkgver}-${_kernelname:-WSP}" "${pkgdir}/lib/modules/${_kernver}/extramodules"
   # add real version for building modules and running depmod from post_install/upgrade
-  mkdir -p "${pkgdir}/lib/modules/extramodules-${pkgver}-${_kernelname:-ARCH}"
-  echo "${_kernver}" > "${pkgdir}/lib/modules/extramodules-${pkgver}-${_kernelname:-ARCH}/version"
+  mkdir -p "${pkgdir}/lib/modules/extramodules-${pkgver}-${_kernelname:-WSP}"
+  echo "${_kernver}" > "${pkgdir}/lib/modules/extramodules-${pkgver}-${_kernelname:-WSP}/version"
 
   # Now we call depmod...
   depmod -b "$pkgdir" -F System.map "$_kernver"
