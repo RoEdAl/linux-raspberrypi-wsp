@@ -1,4 +1,4 @@
-# ArchLinux kernel package with Cirrus Logic (Wolfson) Audio Card support
+# ArchLinux ARM kernel package with Cirrus Logic/Wolfson Audio Card support
 
 Supported devices:
 
@@ -13,8 +13,9 @@ Modified Linux kernel source: [HiassofT/rpi-linux](http://github.com/HiassofT/rp
 
 This `PKGBUILD` brings you this kernel to [ArchLinux ARM](http://archlinuxarm.org/platforms/armv6/raspberry-pi) OS. It is based on `PKGBUILD` from [ArchLinux ARM repository](http://github.com/archlinuxarm/PKGBUILDs/raw/master/core/linux-raspberrypi/PKGBUILD).
 
-
 ````
+[wolfsound@wolfsound ~]$ uname -a
+Linux wolfsound 4.1.13-1.1-WSP #1 PREEMPT Thu Nov 26 15:12:01 CET 2015 armv6l GNU/Linux
 [wolfsound@wolfsound ~]$ aplay -l
 **** List of PLAYBACK Hardware Devices ****
 card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
@@ -44,13 +45,13 @@ Follow [this link](http://headless.audio) for detailed instructions.
 1.  Install kernel package:
 
   ````
-  pacman -U linux-raspberrypi-wsp-4.1.6-1-armv6h.pkg.tar.xz
+  pacman -U linux-raspberrypi-wsp-4.1.13-1.1-armv6h.pkg.tar.xz
   ````
     
   Optionally install kernel headers package (for developers only):
   
   ````
-  pacman -U linux-raspberrypi-wsp-headers-4.1.6-1-armv6h.pkg.tar.xz
+  pacman -U linux-raspberrypi-wsp-headers-4.1.13-1.1-armv6h.pkg.tar.xz
   ````
 
 1.  Add `rpi-cirrus-wm5102` [overlay tree](http://www.raspberrypi.org/documentation/configuration/device-tree.md) to `/boot/options.txt` file:
