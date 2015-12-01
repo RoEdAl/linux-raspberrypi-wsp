@@ -1,4 +1,4 @@
-# ArchLinux ARM kernel package with Cirrus Logic/Wolfson Audio Card support
+# ArchLinux ARM kernel package with Cirrus Logic/Wolfson Audio Card driver
 
 Supported devices:
 
@@ -11,7 +11,7 @@ Modified Linux kernel source: [HiassofT/rpi-linux](http://github.com/HiassofT/rp
 
 ----
 
-This `PKGBUILD` brings you this kernel to [ArchLinux ARM](http://archlinuxarm.org/platforms/armv6/raspberry-pi) OS. It is based on `PKGBUILD` from [ArchLinux ARM repository](http://github.com/archlinuxarm/PKGBUILDs/raw/master/core/linux-raspberrypi/PKGBUILD).
+This `PKGBUILD` brings you this kernel to [ArchLinux ARM](http://archlinuxarm.org/platforms/armv6/raspberry-pi) OS. It is based on `PKGBUILD` from [ArchLinux ARM repository](http://github.com/archlinuxarm/PKGBUILDs/tree/master/core/linux-raspberrypi).
 
 ````
 [wolfsound@wolfsound ~]$ uname -a
