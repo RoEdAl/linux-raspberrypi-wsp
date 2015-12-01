@@ -22,7 +22,7 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
   Subdevices: 0/1
   Subdevice #0: subdevice #0
 ````
-# Instalation from prepared packages.
+# Instalation of prepared packages.
 
 Follow [this link](http://headless.audio) for detailed instructions.
 
