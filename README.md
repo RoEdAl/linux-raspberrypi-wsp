@@ -15,69 +15,70 @@ This `PKGBUILD` brings you this kernel to [ArchLinux ARM](http://archlinuxarm.or
 
 ````
 [wolfsound@wolfsound ~]$ uname -a
-Linux wolfsound 4.1.13-1.1-WSP #1 PREEMPT Thu Nov 26 15:12:01 CET 2015 armv6l GNU/Linux
+Linux wolfsound 4.1.13-1.2-WSP #1 PREEMPT Thu Dec 3 15:10:45 CET 2015 armv6l GNU/Linux
 [wolfsound@wolfsound ~]$ aplay -l
 **** List of PLAYBACK Hardware Devices ****
 card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
   Subdevices: 0/1
   Subdevice #0: subdevice #0
 ````
+
+----
+
 # Instalation of prepared packages.
 
 Follow [this link](http://headless.audio) for detailed instructions.
 
 # Build & installation from sources.
-1.  Clone this repository.
 
-  ````
-  git clone --depth=1 http://github.com/RoEdAl/linux-raspberrypi-wsp.git
-  ````
-1.  [Build package](http://wiki.archlinux.org/index.php/Makepkg):
+1. Clone this repository.
+
+   ````
+   git clone --depth=1 http://github.com/RoEdAl/linux-raspberrypi-wsp.git
+   ````
+1. [Build package](http://wiki.archlinux.org/index.php/Makepkg):
   
-    ````
-    cd linux-raspberrypi-wsp
-    makepkg -sL  
-    ````
+   ````
+   cd linux-raspberrypi-wsp
+   makepkg -sL  
+   ````
 
-    Compilation takes long time. Consider using [`distccd`](http://archlinuxarm.org/developers/distcc-cross-compiling) or/and `ccache`.
-    You may also compile this package on a PC using [QEMU Chroot](http://wiki.archlinux.org/index.php/Raspberry_Pi#QEMU_chroot).
+   Compilation takes long time. Consider using [`distccd`](http://archlinuxarm.org/developers/distcc-cross-compiling) or/and `ccache`.
+   You may also compile this package on a PC using [QEMU Chroot](http://wiki.archlinux.org/index.php/Raspberry_Pi#QEMU_chroot).
+1. Install kernel package:
 
-1.  Install kernel package:
-
-  ````
-  pacman -U linux-raspberrypi-wsp-4.1.13-1.1-armv6h.pkg.tar.xz
-  ````
+   ````
+   pacman -U linux-raspberrypi-wsp-4.1.13-1.2-armv6h.pkg.tar.xz
+   ````
     
-  Optionally install kernel headers package (for developers only):
+   Optionally install kernel headers package (for developers only):
   
-  ````
-  pacman -U linux-raspberrypi-wsp-headers-4.1.13-1.1-armv6h.pkg.tar.xz
-  ````
+   ````
+   pacman -U linux-raspberrypi-wsp-headers-4.1.13-1.2-armv6h.pkg.tar.xz
+   ````
+1. Enable and configure *Cirrus Logic/Wolfson* audio card in `/boot/options.txt` file:
 
-1.  Add `rpi-cirrus-wm5102` [overlay tree](http://www.raspberrypi.org/documentation/configuration/device-tree.md) to `/boot/options.txt` file:
+   ````
+   # Configures Cirrus Logic/Wolfson audio card
+   dtoverlay=rpi-cirrus-wm5102
+   ````
 
-  ````
-  dtoverlay=rpi-cirrus-wm5102
-  ````
+   Optionally enable **mmap** support:
 
-  Optionally add **mmap** support:
+   ````
+   # Enables mmap support in the bcm2708-i2s driver
+   dtoverlay=i2s-mmap
+   ````
+1. Enable onboard audio interface in `/boot/options.txt` file if you need it (disabled by default):
 
-  ````
-  dtoverlay=i2s-mmap
-  ````
-
-1.  Edit `/etc/modules-load.d/raspberrypi.conf` file to prevent loading of [`snd-bcm2835`](http://wiki.archlinux.org/index.php/Raspberry_Pi#Audio) kernel module (optional):
-
-  ````
-  bcm2708-rng
-  #snd-bcm2835
-  ````
-    
+   ````
+   dtparam=audio=on
+   ````
 1. Reboot:
 
-  ````
-  sudo reboot
-  ````
+   ````
+   sudo reboot
+   ````
 
 # Links.
 

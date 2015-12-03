@@ -16,7 +16,7 @@ _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
 pkgver=4.1.13
-pkgrel=1.1
+pkgrel=1.2
 bfqver=v7r8
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
@@ -28,25 +28,27 @@ source=("http://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
         "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0001-block-cgroups-kconfig-build-bits-for-BFQ-${bfqver}-${pkgver%.*}.patch"
         "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0002-block-introduce-the-BFQ-${bfqver}-I-O-sched-for-${pkgver%.*}.patch"
         "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0003-block-bfq-add-Early-Queue-Merge-EQM-to-BFQ-${bfqver}-for-${pkgver%.*}.0.patch"
-        'http://github.com/archlinuxarm/PKGBUILDs/raw/83cf211cdbb42fa2a1cce8bb307a49128e040f93/core/linux-raspberrypi/config.txt'
+        'config.txt'
         'http://github.com/archlinuxarm/PKGBUILDs/raw/f4290fd8a8dfe7af169163d757c8d55c3fdb5ddc/core/linux-raspberrypi/cmdline.txt'
         'http://github.com/archlinuxarm/PKGBUILDs/raw/dc24d546752f0575bd689d6875c45ff101717164/core/linux-raspberrypi/config.v6'
         'config.v6.patch'
         'http://github.com/archlinuxarm/PKGBUILDs/raw/dc24d546752f0575bd689d6875c45ff101717164/core/linux-raspberrypi/config.v7'
         'config.v7.patch'
-        'cirrus.conf')
+        'cirrus.conf'
+	'raspberrypi.conf')
 md5sums=('cb1e94729aad3fc026ffbd966be5ad5d'
          'SKIP'
          '74bf103542cbdee0363819309adb97a2'
          'f09baae3c7add4ed9bedde22ae3efe19'
          'bd8cc19a31d1cf8aeeaf9245057c4f9b'
-         '9a3c82da627b317ec79c37fd6afba569'
+         '24ccf25adc2292d965924b44976e428d'
          '60bc3624123c183305677097bcd56212'
          '35040e65fcbcb3d22001d6d9727971f2'
          '82e3ae43b6cf0c05e828044b54e9b7a6'
          '1f8fc3d9f7c659760fb058bc51d42e54'
          'd9cfde60747189736632349c32d85080'
-         '71bc3a50eb404709ff78f393aed3d0e8')
+         '71bc3a50eb404709ff78f393aed3d0e8'
+         '4511272ed4336120645b68e74f75cb92')
 
 prepare() {
   cd "${srcdir}/${_srcname}"
@@ -118,7 +120,7 @@ _package() {
   provides=('kernel26' "linux=${pkgver}" 'aufs_friendly')
   conflicts=('kernel26' 'linux')
   install=${pkgname}.install
-  backup=('boot/config.txt' 'boot/cmdline.txt')
+  backup=('boot/config.txt' 'boot/cmdline.txt' 'etc/modules-load.d/raspberrypi.conf')
   replaces=('linux-raspberrypi-latest','linux-raspberrypi')
 
   cd "${srcdir}/${_srcname}"
@@ -128,7 +130,7 @@ _package() {
   # get kernel version
   _kernver="$(make kernelrelease)"
 
-  mkdir -p "${pkgdir}"/{lib/modules,lib/firmware,etc/modprobe.d}
+  mkdir -p "${pkgdir}"/{lib/modules,lib/firmware,etc/modprobe.d,etc/modules-load.d}
   make INSTALL_MOD_PATH="${pkgdir}" modules_install
   make INSTALL_DTBS_PATH="${pkgdir}/boot" dtbs_install
 
@@ -169,6 +171,9 @@ _package() {
   
   # install modprobe.d files
   install -m644 ../cirrus.conf "${pkgdir}/etc/modprobe.d"
+
+  # replace /etc/modules-load.d/raspberry.conf
+  install -m644 ../raspberrypi.conf "${pkgdir}/etc/modules-load.d"
 }
 
 _package-headers() {

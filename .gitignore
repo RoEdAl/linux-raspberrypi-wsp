@@ -8,7 +8,6 @@
 *.patch
 
 cmdline.txt
-config.txt
 config.v6
 config.v7
 
