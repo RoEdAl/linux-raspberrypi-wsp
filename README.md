@@ -1,4 +1,4 @@
-# ArchLinux ARM kernel package with Cirrus Logic/Wolfson Audio Card driver
+# ArchLinux ARM kernel package with driver for Cirrus Logic/Wolfson Audio Card.
 
 Supported devices:
 
