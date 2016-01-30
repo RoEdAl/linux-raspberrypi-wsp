@@ -11,12 +11,13 @@
 buildarch=20
 
 pkgbase=linux-raspberrypi-wsp
-_commit=6a64d8bf904b14aa2b0e697bddaecc8092188034
+_commit=d780342a4e7e60bc37f92336725be3ee1888411d
+_cfg_commit=cf8e28c14fb8f34559faaf853f05f8226b64b3fe
 _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
-pkgver=4.1.13
-pkgrel=1.2
+pkgver=4.1.16
+pkgrel=1
 bfqver=v7r8
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
@@ -30,23 +31,23 @@ source=("http://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
         "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0003-block-bfq-add-Early-Queue-Merge-EQM-to-BFQ-${bfqver}-for-${pkgver%.*}.0.patch"
         'config.txt'
         'http://github.com/archlinuxarm/PKGBUILDs/raw/f4290fd8a8dfe7af169163d757c8d55c3fdb5ddc/core/linux-raspberrypi/cmdline.txt'
-        'http://github.com/archlinuxarm/PKGBUILDs/raw/dc24d546752f0575bd689d6875c45ff101717164/core/linux-raspberrypi/config.v6'
+        "http://github.com/archlinuxarm/PKGBUILDs/raw/${_cfg_commit}/core/linux-raspberrypi/config.v6"
         'config.v6.patch'
-        'http://github.com/archlinuxarm/PKGBUILDs/raw/dc24d546752f0575bd689d6875c45ff101717164/core/linux-raspberrypi/config.v7'
+        "http://github.com/archlinuxarm/PKGBUILDs/raw/${_cfg_commit}/core/linux-raspberrypi/config.v7"
         'config.v7.patch'
         'cirrus.conf'
 	'raspberrypi.conf')
-md5sums=('cb1e94729aad3fc026ffbd966be5ad5d'
+md5sums=('88d89794a63de1273e188e3c0bc8f80e'
          'SKIP'
          '74bf103542cbdee0363819309adb97a2'
          'f09baae3c7add4ed9bedde22ae3efe19'
          'bd8cc19a31d1cf8aeeaf9245057c4f9b'
          '24ccf25adc2292d965924b44976e428d'
          '60bc3624123c183305677097bcd56212'
-         '35040e65fcbcb3d22001d6d9727971f2'
-         '82e3ae43b6cf0c05e828044b54e9b7a6'
-         '1f8fc3d9f7c659760fb058bc51d42e54'
-         'd9cfde60747189736632349c32d85080'
+         'db8c931027f6814822ad63424699524c'
+         '2d9e05cc633472ce7c807589459d1b22'
+         'fb6a30b7a10b998703161a459ffde256'
+         '66af466ea2d2b52c6e68af3dbb5049b3'
          '71bc3a50eb404709ff78f393aed3d0e8'
          '4511272ed4336120645b68e74f75cb92')
 
