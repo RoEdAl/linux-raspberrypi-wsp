@@ -7,7 +7,7 @@ Supported devices:
 
 ----
 
-Modified Linux kernel source: [HiassofT/rpi-linux](http://github.com/HiassofT/rpi-linux/tree/cirrus-4.1.y).
+Modified Linux kernel source: [HiassofT/rpi-linux](http://www.horus.com/~hias/cirrus-driver.html).
 
 ----
 
@@ -82,8 +82,9 @@ Follow [this link](http://headless.audio) for detailed instructions.
 
 # Links.
 
-* [Experimental OpenELEC Raspberry Pi test builds with support for Wolfson/Cirrus Logic Audio Card](http://www.horus.com/~hias/tmp/openelec-wolfson/)
-  * [Readme](http://www.horus.com/~hias/tmp/openelec-wolfson/00README.txt)
+* [RPi Linux driver for Wolfson / Cirrus Logic Audio Card](http://www.horus.com/~hias/cirrus-driver.html)
+    * [GitHub - 4.1 branch](https://github.com/HiassofT/rpi-linux/tree/cirrus-4.1.y)
+    * [GitHub - 4.4 branch](https://github.com/HiassofT/rpi-linux/tree/cirrus-4.4.y)
 * [element14 community - Driver fixes and updates to kernel 3.18.16 and 4.0.5](http://www.element14.com/community/thread/43711/l/driver-fixes-and-updates-to-kernel-31816-and-405?displayFullThread=true)
 * [Cirrus Logic's useful mixer scripts](https://github.com/CirrusLogic/wiki-content)
 * [Cirrus Logic's modified Linux kernel source](http://github.com/CirrusLogic/rpi-linux)
