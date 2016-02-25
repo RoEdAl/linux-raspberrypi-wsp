@@ -1,8 +1,7 @@
 # arg 1:  the new package version
 # arg 2:  the old package version
 
-KERNEL_NAME=-raspberrypi-wsp
-KERNEL_VERSION=4.1.10-2.1-ARCH
+KERNEL_VERSION=4.1.18-1-WSP
 
 disable_cma() {
   if [[ -f /boot/config.txt && $(grep '^cma' /boot/config.txt) != '' ]]; then

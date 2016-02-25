@@ -17,7 +17,7 @@ _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
 pkgver=4.1.18
-pkgrel=1
+pkgrel=1.1
 bfqver=v7r8
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
@@ -141,7 +141,6 @@ _package() {
 
   # set correct depmod command for install
   sed \
-    -e  "s/KERNEL_NAME=.*/KERNEL_NAME=${_kernelname}/g" \
     -e  "s/KERNEL_VERSION=.*/KERNEL_VERSION=${_kernver}/g" \
     -i "${startdir}/${pkgname}.install"
 
@@ -155,10 +154,10 @@ _package() {
   find "${pkgdir}" -name '*.ko' |xargs -P ${_ncores} -n 1 xz -C crc32 -6e
 
   # make room for external modules
-  ln -s "../extramodules-${pkgver}-${_kernelname:-WSP}" "${pkgdir}/lib/modules/${_kernver}/extramodules"
+  ln -s "../extramodules-${pkgver}${_kernelname}" "${pkgdir}/lib/modules/${_kernver}/extramodules"
   # add real version for building modules and running depmod from post_install/upgrade
-  mkdir -p "${pkgdir}/lib/modules/extramodules-${pkgver}-${_kernelname:-WSP}"
-  echo "${_kernver}" > "${pkgdir}/lib/modules/extramodules-${pkgver}-${_kernelname:-WSP}/version"
+  mkdir -p "${pkgdir}/lib/modules/extramodules-${pkgver}${_kernelname}"
+  echo "${_kernver}" > "${pkgdir}/lib/modules/extramodules-${pkgver}${_kernelname}/version"
 
   # Now we call depmod...
   depmod -b "$pkgdir" -F System.map "$_kernver"
