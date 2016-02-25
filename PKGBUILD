@@ -12,7 +12,7 @@ buildarch=20
 
 pkgbase=linux-raspberrypi-wsp
 _commit=b4748f15668b82d75f7cb36309104d84fc1e592b
-_cfg_commit=cf8e28c14fb8f34559faaf853f05f8226b64b3fe
+_cfg_commit=1ea1d58c1433cc78bc3d57b0d7622594608e93f4
 _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
@@ -44,10 +44,10 @@ md5sums=('73635392e9ed5de221b16688cb49969f'
          'bd8cc19a31d1cf8aeeaf9245057c4f9b'
          '24ccf25adc2292d965924b44976e428d'
          '60bc3624123c183305677097bcd56212'
-         'db8c931027f6814822ad63424699524c'
-         '2d9e05cc633472ce7c807589459d1b22'
-         'fb6a30b7a10b998703161a459ffde256'
-         '66af466ea2d2b52c6e68af3dbb5049b3'
+         '9afa51a584b5faeb176461d088e7ff17'
+         '0c7bd3bd7181aa1af44f8a450c429c11'
+         '5bcaad75177d6fc49f050d53edd4f16c'
+         'c27c9f9161b2e181b7155799e39b999d'
          '71bc3a50eb404709ff78f393aed3d0e8'
          '4511272ed4336120645b68e74f75cb92')
 
