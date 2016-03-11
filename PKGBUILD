@@ -11,13 +11,13 @@
 buildarch=20
 
 pkgbase=linux-raspberrypi-wsp
-_commit=b4748f15668b82d75f7cb36309104d84fc1e592b
-_cfg_commit=1ea1d58c1433cc78bc3d57b0d7622594608e93f4
+_commit=20cf7471d3536ba3289151519c52e03d7ace6614
+_cfg_commit=f1a42576d0e934d32979d9f40f6e9ec8cacc2d08
 _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
 pkgver=4.1.18
-pkgrel=1.1
+pkgrel=3
 bfqver=v7r8
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
@@ -29,6 +29,7 @@ source=("http://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
         "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0001-block-cgroups-kconfig-build-bits-for-BFQ-${bfqver}-${pkgver%.*}.patch"
         "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0002-block-introduce-the-BFQ-${bfqver}-I-O-sched-for-${pkgver%.*}.patch"
         "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0003-block-bfq-add-Early-Queue-Merge-EQM-to-BFQ-${bfqver}-for-${pkgver%.*}.0.patch"
+	'http://archlinuxarm.org/builder/src/brcmfmac43430-sdio.bin' 'http://archlinuxarm.org/builder/src/brcmfmac43430-sdio.txt'
         'config.txt'
         'http://github.com/archlinuxarm/PKGBUILDs/raw/f4290fd8a8dfe7af169163d757c8d55c3fdb5ddc/core/linux-raspberrypi/cmdline.txt'
         "http://github.com/archlinuxarm/PKGBUILDs/raw/${_cfg_commit}/core/linux-raspberrypi/config.v6"
@@ -37,17 +38,19 @@ source=("http://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
         'config.v7.patch'
         'cirrus.conf'
 	'raspberrypi.conf')
-md5sums=('73635392e9ed5de221b16688cb49969f'
+md5sums=('8ed09d2940d0dd3454e5bfde5c0db3d2'
          'SKIP'
          '74bf103542cbdee0363819309adb97a2'
          'f09baae3c7add4ed9bedde22ae3efe19'
          'bd8cc19a31d1cf8aeeaf9245057c4f9b'
+         '4a410ab9a1eefe82e158d36df02b3589'
+         '8c3cb6d8f0609b43f09d083b4006ec5a'
          '24ccf25adc2292d965924b44976e428d'
          '60bc3624123c183305677097bcd56212'
-         '9afa51a584b5faeb176461d088e7ff17'
-         '0c7bd3bd7181aa1af44f8a450c429c11'
-         '5bcaad75177d6fc49f050d53edd4f16c'
-         'bed5970d747e17648fb2bac24a6cd1bf'
+         'cda3f853ce35cda97c8e0a322c05b5a3'
+         '9e69c7e9cd712b072512602551780bd2'
+         '0e2c80abd8d9fb8099ff41d95f87806e'
+         'ea9804ec3ab319978f259fbb88fb6ae7'
          '71bc3a50eb404709ff78f393aed3d0e8'
          '4511272ed4336120645b68e74f75cb92')
 
@@ -81,6 +84,11 @@ prepare() {
 
   # don't run depmod on 'make install'. We'll do this ourselves in packaging
   sed -i '2iexit 0' scripts/depmod.sh
+
+  if [[ $CARCH == "armv7h" ]]; then
+    mkdir firmware/brcm
+    cp ../brcmfmac43430-sdio.{bin,txt} firmware/brcm
+  fi
 }
 
 build() {

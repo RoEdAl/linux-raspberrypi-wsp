@@ -1,13 +1,5 @@
---- config.v7	2016-02-25 12:26:39.000000000 +0100
-+++ config.v7.new	2016-02-25 12:48:32.000000000 +0100
-@@ -1,6 +1,6 @@
- #
- # Automatically generated file; DO NOT EDIT.
--# Linux/arm 4.1.18-1 Kernel Configuration
-+# Linux/arm 4.1.18-1.1 Kernel Configuration
- #
- CONFIG_ARM=y
- CONFIG_SYS_SUPPORTS_APM_EMULATION=y
+--- config.v7	2016-03-07 15:05:21.000000000 +0100
++++ config.v7.new	2016-03-07 15:06:33.000000000 +0100
 @@ -31,16 +31,16 @@
  CONFIG_INIT_ENV_ARG_LIMIT=32
  CONFIG_CROSS_COMPILE=""
@@ -36,7 +28,7 @@
  CONFIG_RFKILL_GPIO=m
  CONFIG_NET_9P=m
  # CONFIG_NET_9P_DEBUG is not set
-@@ -1713,6 +1714,7 @@
+@@ -1714,6 +1715,7 @@
  # CONFIG_ALTERA_TSE is not set
  CONFIG_NET_VENDOR_ARC=y
  # CONFIG_ARC_EMAC is not set
@@ -44,7 +36,7 @@
  CONFIG_NET_CADENCE=y
  # CONFIG_MACB is not set
  CONFIG_NET_VENDOR_BROADCOM=y
-@@ -2169,6 +2171,7 @@
+@@ -2170,6 +2172,7 @@
  CONFIG_INPUT_POWERMATE=m
  CONFIG_INPUT_YEALINK=m
  CONFIG_INPUT_CM109=m
@@ -52,7 +44,7 @@
  CONFIG_INPUT_UINPUT=m
  # CONFIG_INPUT_PCF8574 is not set
  # CONFIG_INPUT_PWM_BEEPER is not set
-@@ -2496,6 +2499,7 @@
+@@ -2498,6 +2501,7 @@
  # CONFIG_CHARGER_MAX8903 is not set
  CONFIG_CHARGER_LP8727=m
  # CONFIG_CHARGER_GPIO is not set
@@ -60,7 +52,7 @@
  # CONFIG_CHARGER_BQ2415X is not set
  # CONFIG_CHARGER_BQ24190 is not set
  # CONFIG_CHARGER_BQ24735 is not set
-@@ -2795,7 +2799,38 @@
+@@ -2797,7 +2801,38 @@
  # CONFIG_MFD_WM831X_SPI is not set
  # CONFIG_MFD_WM8350_I2C is not set
  # CONFIG_MFD_WM8994 is not set
@@ -100,7 +92,7 @@
  CONFIG_MEDIA_SUPPORT=m
  
  #
-@@ -3467,6 +3502,7 @@
+@@ -3469,6 +3504,7 @@
  CONFIG_SND_BCM2708_SOC_RPI_PROTO=m
  CONFIG_SND_BCM2708_SOC_IQAUDIO_DAC=m
  CONFIG_SND_BCM2708_SOC_RASPIDAC3=m
@@ -108,7 +100,7 @@
  # CONFIG_SND_DESIGNWARE_I2S is not set
  
  #
-@@ -3489,6 +3525,8 @@
+@@ -3491,6 +3527,8 @@
  #
  # CODEC drivers
  #
@@ -117,7 +109,7 @@
  CONFIG_SND_SOC_ADAU1701=m
  # CONFIG_SND_SOC_AK4104 is not set
  # CONFIG_SND_SOC_AK4554 is not set
-@@ -3535,6 +3573,7 @@
+@@ -3537,6 +3575,7 @@
  # CONFIG_SND_SOC_TLV320AIC31XX is not set
  # CONFIG_SND_SOC_TLV320AIC3X is not set
  # CONFIG_SND_SOC_TS3A227E is not set
@@ -125,7 +117,7 @@
  # CONFIG_SND_SOC_WM8510 is not set
  # CONFIG_SND_SOC_WM8523 is not set
  # CONFIG_SND_SOC_WM8580 is not set
-@@ -3891,8 +3930,8 @@
+@@ -3893,8 +3932,8 @@
  # CONFIG_MMC_USDHI6ROL0 is not set
  # CONFIG_MEMSTICK is not set
  CONFIG_NEW_LEDS=y
@@ -136,7 +128,7 @@
  
  #
  # LED drivers
-@@ -3901,7 +3940,7 @@
+@@ -3903,7 +3942,7 @@
  # CONFIG_LEDS_LM3533 is not set
  # CONFIG_LEDS_LM3642 is not set
  # CONFIG_LEDS_PCA9532 is not set
@@ -145,7 +137,7 @@
  # CONFIG_LEDS_LP3944 is not set
  # CONFIG_LEDS_LP5521 is not set
  # CONFIG_LEDS_LP5523 is not set
-@@ -3911,7 +3950,8 @@
+@@ -3913,7 +3952,8 @@
  # CONFIG_LEDS_PCA955X is not set
  # CONFIG_LEDS_PCA963X is not set
  # CONFIG_LEDS_DAC124S085 is not set
@@ -155,7 +147,7 @@
  # CONFIG_LEDS_BD2802 is not set
  # CONFIG_LEDS_LT3593 is not set
  # CONFIG_LEDS_TCA6507 is not set
-@@ -4367,6 +4407,7 @@
+@@ -4369,6 +4409,7 @@
  CONFIG_AD7887=m
  CONFIG_AD7923=m
  CONFIG_AD799X=m
