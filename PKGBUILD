@@ -11,13 +11,13 @@
 buildarch=20
 
 pkgbase=linux-raspberrypi-wsp
-_commit=20cf7471d3536ba3289151519c52e03d7ace6614
+_commit=7a60112fb97c50a7dcbab1e111a336b72e08d142
 _cfg_commit=f1a42576d0e934d32979d9f40f6e9ec8cacc2d08
 _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
-pkgver=4.1.18
-pkgrel=3
+pkgver=4.1.19
+pkgrel=4
 bfqver=v7r8
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
@@ -38,7 +38,7 @@ source=("http://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
         'config.v7.patch'
         'cirrus.conf'
 	'raspberrypi.conf')
-md5sums=('8ed09d2940d0dd3454e5bfde5c0db3d2'
+md5sums=('c9d0609982c2e7ade93bce2bec48ce8c'
          'SKIP'
          '74bf103542cbdee0363819309adb97a2'
          'f09baae3c7add4ed9bedde22ae3efe19'
