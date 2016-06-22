@@ -11,14 +11,14 @@
 buildarch=20
 
 pkgbase=linux-raspberrypi-wsp
-_commit=7a60112fb97c50a7dcbab1e111a336b72e08d142
-_cfg_commit=f1a42576d0e934d32979d9f40f6e9ec8cacc2d08
+_commit=2aab228895fbf0ad37ff66877e2799112ee1071d
+_cfg_commit=4488777fca182db4623b569faaf58050e01f2815
 _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
-pkgver=4.1.19
-pkgrel=4
-bfqver=v7r8
+pkgver=4.4.13
+pkgrel=2
+bfqver=v7r11
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
 license=('GPL2')
@@ -26,9 +26,9 @@ makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'git')
 options=('!strip')
 source=("http://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
         "git+https://github.com/sfjro/aufs4-standalone.git#branch=aufs${pkgver%.*}"
-        "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0001-block-cgroups-kconfig-build-bits-for-BFQ-${bfqver}-${pkgver%.*}.patch"
-        "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0002-block-introduce-the-BFQ-${bfqver}-I-O-sched-for-${pkgver%.*}.patch"
-        "ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0003-block-bfq-add-Early-Queue-Merge-EQM-to-BFQ-${bfqver}-for-${pkgver%.*}.0.patch"
+        "bfq1.patch::ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0001-block-cgroups-kconfig-build-bits-for-BFQ-${bfqver}-${pkgver%.*}.0.patch"
+        "bfq2.patch::ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0002-block-introduce-the-BFQ-${bfqver}-I-O-sched-for-${pkgver%.*}.0.patch"
+        "bfq3.patch::ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0003-block-bfq-add-Early-Queue-Merge-EQM-to-BFQ-${bfqver}-for.patch"
 	'http://archlinuxarm.org/builder/src/brcmfmac43430-sdio.bin' 'http://archlinuxarm.org/builder/src/brcmfmac43430-sdio.txt'
         'config.txt'
         'http://github.com/archlinuxarm/PKGBUILDs/raw/f4290fd8a8dfe7af169163d757c8d55c3fdb5ddc/core/linux-raspberrypi/cmdline.txt'
@@ -38,19 +38,19 @@ source=("http://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
         'config.v7.patch'
         'cirrus.conf'
 	'raspberrypi.conf')
-md5sums=('c9d0609982c2e7ade93bce2bec48ce8c'
+md5sums=('be703a1a9390f38d98929d79a29e8b22'
          'SKIP'
-         '74bf103542cbdee0363819309adb97a2'
-         'f09baae3c7add4ed9bedde22ae3efe19'
-         'bd8cc19a31d1cf8aeeaf9245057c4f9b'
+         'c1d7fcfe88edb658375089c0a9cc1811'
+         '953133d5e387de2ad79ac0ae5c27cb6b'
+         'f0387e673975e9f2a5e05136948edece'
          '4a410ab9a1eefe82e158d36df02b3589'
          '8c3cb6d8f0609b43f09d083b4006ec5a'
          '24ccf25adc2292d965924b44976e428d'
          '60bc3624123c183305677097bcd56212'
-         'cda3f853ce35cda97c8e0a322c05b5a3'
-         '9e69c7e9cd712b072512602551780bd2'
-         '0e2c80abd8d9fb8099ff41d95f87806e'
-         'ea9804ec3ab319978f259fbb88fb6ae7'
+         '6d06720160c1bf507d5bd2597b42a4d8'
+         'a1ff4f2fdf6a91b4952035eeccff1ba5'
+         'bada1ee43f6ad2246f1ec239b67743ed'
+         '77bdcbd92303aa1504db0e0f1391590e'
          '71bc3a50eb404709ff78f393aed3d0e8'
          '4511272ed4336120645b68e74f75cb92')
 
@@ -69,9 +69,9 @@ prepare() {
   patch -Np1 -i ../aufs4-standalone/aufs4-standalone.patch
 
   msg2 "Add BFQ patches"
-  patch -Np1 -i "${srcdir}/0001-block-cgroups-kconfig-build-bits-for-BFQ-${bfqver}-${pkgver%.*}.patch"
-  patch -Np1 -i "${srcdir}/0002-block-introduce-the-BFQ-${bfqver}-I-O-sched-for-${pkgver%.*}.patch"
-  patch -Np1 -i "${srcdir}/0003-block-bfq-add-Early-Queue-Merge-EQM-to-BFQ-${bfqver}-for-${pkgver%.*}.0.patch"
+  patch -Np1 -i "${srcdir}/bfq1.patch"
+  patch -Np1 -i "${srcdir}/bfq2.patch"
+  patch -Np1 -i "${srcdir}/bfq3.patch"
 
   msg "Prepare to build"
   [[ $CARCH == "armv6h" ]] && cat "${srcdir}/config.v6" > ./.config
