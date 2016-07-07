@@ -11,12 +11,12 @@
 buildarch=20
 
 pkgbase=linux-raspberrypi-wsp
-_commit=2aab228895fbf0ad37ff66877e2799112ee1071d
-_cfg_commit=4488777fca182db4623b569faaf58050e01f2815
+_commit=ad7e3255b855059c97731d46a73a7e6b0629f49c
+_cfg_commit=3d91f0f795bd25c2afb44c1dff34a770930ea077
 _srcname=rpi-linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
-pkgver=4.4.13
+pkgver=4.4.14
 pkgrel=2
 bfqver=v7r11
 arch=('armv6h' 'armv7h')
@@ -38,7 +38,7 @@ source=("http://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
         'config.v7.patch'
         'cirrus.conf'
 	'raspberrypi.conf')
-md5sums=('be703a1a9390f38d98929d79a29e8b22'
+md5sums=('2f76f4683e476d0798025196a1d4cbaf'
          'SKIP'
          'c1d7fcfe88edb658375089c0a9cc1811'
          '953133d5e387de2ad79ac0ae5c27cb6b'
@@ -47,10 +47,10 @@ md5sums=('be703a1a9390f38d98929d79a29e8b22'
          '8c3cb6d8f0609b43f09d083b4006ec5a'
          '24ccf25adc2292d965924b44976e428d'
          '60bc3624123c183305677097bcd56212'
-         '6d06720160c1bf507d5bd2597b42a4d8'
-         'a1ff4f2fdf6a91b4952035eeccff1ba5'
-         'bada1ee43f6ad2246f1ec239b67743ed'
-         '77bdcbd92303aa1504db0e0f1391590e'
+         '3b5d4428c352d12ee31d34c2c348bbce'
+         'a66c5532160985b5a19253f330de8210'
+         '7867418ff42422f503a3b1b87ba57312'
+         '58d255baf12c287e6a35d68fc80a6e94'
          '71bc3a50eb404709ff78f393aed3d0e8'
          '4511272ed4336120645b68e74f75cb92')
 

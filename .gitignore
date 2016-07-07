@@ -7,9 +7,12 @@
 *.sig
 *.patch
 
+# Downloaded sources
 cmdline.txt
 config.v6
 config.v7
+brcmfmac43430-sdio.bin
+brcmfmac43430-sdio.txt
 
 # AUR metadata
 .AURINFO
