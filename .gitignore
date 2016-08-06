@@ -9,8 +9,8 @@
 
 # Downloaded sources
 cmdline.txt
-config.v6
-config.v7
+config-armv6h
+config-armv7h
 brcmfmac43430-sdio.bin
 brcmfmac43430-sdio.txt
 
@@ -21,3 +21,4 @@ brcmfmac43430-sdio.txt
 pkg/
 src/
 aufs4-standalone/
+wsp-patches/

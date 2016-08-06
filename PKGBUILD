@@ -1,6 +1,6 @@
 #
 # Linux kernel Cirrus Logic soundcard support
-# Linux kernel repository: https://github.com/HiassofT/rpi-linux/tree/cirrus-4.1.y
+# Patches taken from: http://github.com/HiassofT/rpi-linux/tree/cirrus-4.4.y
 #
 # Maintainer: Dave Higham <pepedog@archlinuxarm.org>
 # Maintainer: Kevin Mihelich <kevin@archlinuxarm.org>
@@ -11,53 +11,57 @@
 buildarch=20
 
 pkgbase=linux-raspberrypi-wsp
-_commit=ad7e3255b855059c97731d46a73a7e6b0629f49c
-_cfg_commit=3d91f0f795bd25c2afb44c1dff34a770930ea077
-_srcname=rpi-linux-${_commit}
+_commit=cff67c7e03f4333149f2a8f6eafd3bc44475114a
+_cfg_commit=a06a70a31f34ffe19a0ad61ec6a8453d6a62ce86
+_srcname=linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
-pkgver=4.4.14
-pkgrel=2
+pkgver=4.4.16
+pkgrel=1
 bfqver=v7r11
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
 license=('GPL2')
 makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'git')
 options=('!strip')
-source=("http://github.com/HiassofT/rpi-linux/archive/${_commit}.tar.gz"
-        "git+https://github.com/sfjro/aufs4-standalone.git#branch=aufs${pkgver%.*}"
+
+source=("http://github.com/raspberrypi/linux/archive/${_commit}.tar.gz"
+	'wsp-patches::git+https://github.com/RoEdAl/linux-raspberrypi-wsp-patches.git#branch=cirrus-4.4.y'
+	"git+https://github.com/sfjro/aufs4-standalone.git#branch=aufs${pkgver%.*}"
         "bfq1.patch::ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0001-block-cgroups-kconfig-build-bits-for-BFQ-${bfqver}-${pkgver%.*}.0.patch"
         "bfq2.patch::ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0002-block-introduce-the-BFQ-${bfqver}-I-O-sched-for-${pkgver%.*}.0.patch"
         "bfq3.patch::ftp://teambelgium.net/bfq/patches/${pkgver%.*}.0-${bfqver}/0003-block-bfq-add-Early-Queue-Merge-EQM-to-BFQ-${bfqver}-for.patch"
-	'http://archlinuxarm.org/builder/src/brcmfmac43430-sdio.bin' 'http://archlinuxarm.org/builder/src/brcmfmac43430-sdio.txt'
-        'config.txt'
-        'http://github.com/archlinuxarm/PKGBUILDs/raw/f4290fd8a8dfe7af169163d757c8d55c3fdb5ddc/core/linux-raspberrypi/cmdline.txt'
-        "http://github.com/archlinuxarm/PKGBUILDs/raw/${_cfg_commit}/core/linux-raspberrypi/config.v6"
-        'config.v6.patch'
-        "http://github.com/archlinuxarm/PKGBUILDs/raw/${_cfg_commit}/core/linux-raspberrypi/config.v7"
-        'config.v7.patch'
+	'config.txt'
+        "http://github.com/archlinuxarm/PKGBUILDs/raw/${_cfg_commit}/core/linux-raspberrypi/cmdline.txt"
         'cirrus.conf'
-	'raspberrypi.conf')
-md5sums=('2f76f4683e476d0798025196a1d4cbaf'
+        'raspberrypi.conf')
+source_armv6h=("config-armv6h::http://github.com/archlinuxarm/PKGBUILDs/raw/${_cfg_commit}/core/linux-raspberrypi/config.v6"
+               'config-armv6h.patch' )
+source_armv7h=("config-armv7h::http://github.com/archlinuxarm/PKGBUILDs/raw/${_cfg_commit}/core/linux-raspberrypi/config.v7"
+               'config-armv7h.patch'
+	       'https://archlinuxarm.org/builder/src/brcmfmac43430-sdio.bin' 'https://archlinuxarm.org/builder/src/brcmfmac43430-sdio.txt')
+
+md5sums=('1ceea2c6799d61be6aa5ef3c1662b4a2'
+         'SKIP'
          'SKIP'
          'c1d7fcfe88edb658375089c0a9cc1811'
          '953133d5e387de2ad79ac0ae5c27cb6b'
          'f0387e673975e9f2a5e05136948edece'
-         '4a410ab9a1eefe82e158d36df02b3589'
-         '8c3cb6d8f0609b43f09d083b4006ec5a'
-         '24ccf25adc2292d965924b44976e428d'
+         '42cae552a8aca187560b60a8fc771811'
          '60bc3624123c183305677097bcd56212'
-         '3b5d4428c352d12ee31d34c2c348bbce'
-         'a66c5532160985b5a19253f330de8210'
-         '7867418ff42422f503a3b1b87ba57312'
-         '58d255baf12c287e6a35d68fc80a6e94'
          '71bc3a50eb404709ff78f393aed3d0e8'
          '4511272ed4336120645b68e74f75cb92')
+md5sums_armv6h=('b8ad1b3c1e9044d088c99831bad1e692'
+                'bb921710d27156b3245fc2dc8bae58a9')
+md5sums_armv7h=('798fbda206055497883cfbcafb72916b'
+                '8b7ca462ca9e047662e4bc7f27d715b5'
+                '4a410ab9a1eefe82e158d36df02b3589'
+                '8c3cb6d8f0609b43f09d083b4006ec5a')
 
 prepare() {
   cd "${srcdir}/${_srcname}"
 
-  msg2 "AUFS patches"
+  msg2 'AUFS patches'
   cp -ru "${srcdir}/aufs4-standalone/Documentation" .
   cp -ru "${srcdir}/aufs4-standalone/fs" .
   cp -ru "${srcdir}/aufs4-standalone/include/uapi/linux/aufs_type.h" ./include/linux
@@ -68,24 +72,27 @@ prepare() {
   patch -Np1 -i ../aufs4-standalone/aufs4-mmap.patch
   patch -Np1 -i ../aufs4-standalone/aufs4-standalone.patch
 
-  msg2 "Add BFQ patches"
+  msg2 'BFQ patches'
   patch -Np1 -i "${srcdir}/bfq1.patch"
   patch -Np1 -i "${srcdir}/bfq2.patch"
   patch -Np1 -i "${srcdir}/bfq3.patch"
 
-  msg "Prepare to build"
-  [[ $CARCH == "armv6h" ]] && cat "${srcdir}/config.v6" > ./.config
-  [[ $CARCH == "armv6h" ]] && patch "./.config" < "${srcdir}/config.v6.patch"
-  [[ $CARCH == "armv7h" ]] && cat "${srcdir}/config.v7" > ./.config
-  [[ $CARCH == "armv7h" ]] && patch "./.config" < "${srcdir}/config.v7.patch"
+  msg2 'WSP patch'
+  patch -tNp1 --unified -i "${srcdir}/wsp-patches/squashed/0001-Add-support-to-Cirrus-Logic-Wolfson-sound-card.patch"
 
+  msg2 'Configuration'
+  cat "${srcdir}/config-${CARCH}" > ./.config
+  patch "./.config" < "${srcdir}/config-${CARCH}.patch"
+
+  msg2 'Makefile'
   # add pkgrel to extraversion
   sed -ri "s|^(EXTRAVERSION =)(.*)|\1 \2-${pkgrel}|" Makefile
 
   # don't run depmod on 'make install'. We'll do this ourselves in packaging
   sed -i '2iexit 0' scripts/depmod.sh
-
-  if [[ $CARCH == "armv7h" ]]; then
+  
+  if [[ $CARCH == 'armv7h' ]]; then
+    msg2 'Preparing firmware'
     mkdir firmware/brcm
     cp ../brcmfmac43430-sdio.{bin,txt} firmware/brcm
   fi
