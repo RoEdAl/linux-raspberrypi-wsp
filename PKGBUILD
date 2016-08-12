@@ -52,7 +52,7 @@ md5sums=('e0fb55faf39b2ef517176d1a08972f1a'
          '71bc3a50eb404709ff78f393aed3d0e8'
          '4511272ed4336120645b68e74f75cb92')
 md5sums_armv6h=('f1a85fa9ef3d77d01b0e68525dbd7320'
-                'bb921710d27156b3245fc2dc8bae58a9')
+                '9f57801e90cfc436a0c271fc3b86bdac')
 md5sums_armv7h=('d598f21e6d68da94f372453616e2df75'
                 '57719a4477ccf4a25c37eb060ce54587'
                 '4a410ab9a1eefe82e158d36df02b3589'
