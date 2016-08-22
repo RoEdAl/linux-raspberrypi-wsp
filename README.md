@@ -15,7 +15,7 @@ This `PKGBUILD` brings you this kernel to [ArchLinux ARM](http://archlinuxarm.or
 
 ````
 [wolfsound@wolfsound ~]$ uname -a
-Linux wolfsound 4.1.16-1-WSP #1 Fri Jan 29 17:01:48 CET 2016 armv6l GNU/Linux
+Linux wolfsound 4.4.17-2-WSP #1 Wed Aug 17 23:11:34 CEST 2016 armv6l GNU/Linux
 [wolfsound@wolfsound ~]$ aplay -l
 **** List of PLAYBACK Hardware Devices ****
 card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
