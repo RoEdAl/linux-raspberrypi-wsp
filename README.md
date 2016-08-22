@@ -34,7 +34,7 @@ Follow [this link](http://headless.audio) for detailed instructions.
 1. Clone this repository.
 
    ````
-   git clone --depth=1 http://github.com/RoEdAl/linux-raspberrypi-wsp.git
+   git clone http://github.com/RoEdAl/linux-raspberrypi-wsp.git
    ````
 1. [Build package](http://wiki.archlinux.org/index.php/Makepkg):
   
@@ -48,13 +48,13 @@ Follow [this link](http://headless.audio) for detailed instructions.
 1. Install kernel package:
 
    ````
-   pacman -U linux-raspberrypi-wsp-4.1.13-1.2-armv6h.pkg.tar.xz
+   pacman -U linux-raspberrypi-wsp-4.4.17-2-armv6h.pkg.tar.xz
    ````
     
    Optionally install kernel headers package (for developers only):
   
    ````
-   pacman -U linux-raspberrypi-wsp-headers-4.1.13-1.2-armv6h.pkg.tar.xz
+   pacman -U linux-raspberrypi-wsp-headers-4.4.17-2-armv6h.pkg.tar.xz
    ````
 1. Enable and configure *Cirrus Logic/Wolfson* audio card in `/boot/options.txt` file:
 
