@@ -11,12 +11,12 @@
 buildarch=20
 
 pkgbase=linux-raspberrypi-wsp
-_commit=5ba1281cbd7f1d8db419f41919a51dedc4d5afa3
+_commit=fef324cd632a3421140205754b8089b102b03f8f
 _cfg_commit=78b04515b74667268e27ae1456e02cc9870d571a
 _srcname=linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
-pkgver=4.4.19
+pkgver=4.4.20
 pkgrel=1
 bfqver=v7r11
 arch=('armv6h' 'armv7h')
@@ -119,8 +119,8 @@ build() {
   ####################
   # stop here
   # this is useful to configure the kernel
-  #msg "Stopping build"
-  #return 1
+  msg "Stopping build"
+  return 1
   ####################
 
   #yes "" | make config
