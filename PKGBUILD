@@ -41,7 +41,7 @@ source_armv7h=("config-armv7h::http://github.com/archlinuxarm/PKGBUILDs/raw/${_c
                'config-armv7h.patch'
 	       'https://archlinuxarm.org/builder/src/brcmfmac43430-sdio.bin' 'https://archlinuxarm.org/builder/src/brcmfmac43430-sdio.txt')
 
-md5sums=('81452447ad88cc3510b89ee2af7af813'
+md5sums=('0c79f3180d6aaf7104f2ffd102edcfea'
          'SKIP'
          'SKIP'
          'c1d7fcfe88edb658375089c0a9cc1811'
@@ -54,7 +54,7 @@ md5sums=('81452447ad88cc3510b89ee2af7af813'
 md5sums_armv6h=('a5e85ed9120c9dcb14844c6602836f23'
                 '46304bd952f160509480fc0420c765e6')
 md5sums_armv7h=('db60becb81cadd664b2bab2dbbd0b335'
-                '166b63eaba502df507e904e7e309e05f'
+                'bbedb7a52a7feb5a4a0fa24ab466ce94'
                 '4a410ab9a1eefe82e158d36df02b3589'
                 '8c3cb6d8f0609b43f09d083b4006ec5a')
 
