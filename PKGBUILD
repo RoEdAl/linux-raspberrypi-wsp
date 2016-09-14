@@ -11,13 +11,13 @@
 buildarch=20
 
 pkgbase=linux-raspberrypi-wsp
-_commit=fef324cd632a3421140205754b8089b102b03f8f
+_commit=dd9188011786fb62a7960922f31e8e086fb2009b
 _cfg_commit=78b04515b74667268e27ae1456e02cc9870d571a
 _srcname=linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
 pkgver=4.4.20
-pkgrel=1
+pkgrel=2
 bfqver=v7r11
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
