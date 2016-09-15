@@ -11,7 +11,7 @@
 buildarch=20
 
 pkgbase=linux-raspberrypi-wsp
-_commit=dd9188011786fb62a7960922f31e8e086fb2009b
+_commit=24e62728b3fc4f118c8ae17b374bce189bb188fc
 _cfg_commit=78b04515b74667268e27ae1456e02cc9870d571a
 _srcname=linux-${_commit}
 _kernelname=${pkgbase#linux}
@@ -41,7 +41,7 @@ source_armv7h=("config-armv7h::http://github.com/archlinuxarm/PKGBUILDs/raw/${_c
                'config-armv7h.patch'
 	       'https://archlinuxarm.org/builder/src/brcmfmac43430-sdio.bin' 'https://archlinuxarm.org/builder/src/brcmfmac43430-sdio.txt')
 
-md5sums=('240ca2ec07612f0d1ff0000a69b5d86d'
+md5sums=('5c3aa0ff206519013e4bbf63c9415094'
          'SKIP'
          'SKIP'
          'c1d7fcfe88edb658375089c0a9cc1811'
