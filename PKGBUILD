@@ -11,13 +11,13 @@
 buildarch=20
 
 pkgbase=linux-raspberrypi-wsp
-_commit=a59ca8f1e8e068dd58bc453dc88295e7045dafcf
-_cfg_commit=b4ad5b491f1942624bf427848ef67a31a4d666a6
+_commit=f2af0035686bb70bfb14a9275d0da889a270be56
+_cfg_commit=fcbd0dfbcaf1808dff55a504b636eae582a0c7f5
 _srcname=linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
-pkgver=4.4.24
-pkgrel=2
+pkgver=4.4.27
+pkgrel=1
 bfqver=v7r11
 arch=('armv6h' 'armv7h')
 url="http://www.kernel.org/"
@@ -41,7 +41,7 @@ source_armv7h=("config-armv7h::http://github.com/archlinuxarm/PKGBUILDs/raw/${_c
                'config-armv7h.patch'
 	       'https://archlinuxarm.org/builder/src/brcmfmac43430-sdio.bin' 'https://archlinuxarm.org/builder/src/brcmfmac43430-sdio.txt')
 
-md5sums=('917783667733bd614dd199d7eb9a77f9'
+md5sums=('e62f2ccdc0b4b863a5527f5c8ba47088'
          'SKIP'
          'SKIP'
          'c1d7fcfe88edb658375089c0a9cc1811'
@@ -51,9 +51,9 @@ md5sums=('917783667733bd614dd199d7eb9a77f9'
          '60bc3624123c183305677097bcd56212'
          '71bc3a50eb404709ff78f393aed3d0e8'
          '4511272ed4336120645b68e74f75cb92')
-md5sums_armv6h=('42570338a23fe5ae64c7225b1f72f69a'
+md5sums_armv6h=('20936b2a0a5197b6bbdaf084001b725c'
                 '46304bd952f160509480fc0420c765e6')
-md5sums_armv7h=('28344d4a8d618768befd26fc89155307'
+md5sums_armv7h=('8159fb5501c5b8e8ae730ff5fe0a3d5d'
                 'ea4ca2a0cac5e7491ebd320a90572564'
                 '4a410ab9a1eefe82e158d36df02b3589'
                 '8c3cb6d8f0609b43f09d083b4006ec5a')
