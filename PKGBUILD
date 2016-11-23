@@ -11,12 +11,12 @@
 buildarch=20
 
 pkgbase=linux-raspberrypi-wsp
-_commit=c1f53f11eda0dbc733e7ecef1c1af0885a3537a3
+_commit=38f2800e6e94019a00a2880bfed8fba37aea2e5d
 _cfg_commit=fcbd0dfbcaf1808dff55a504b636eae582a0c7f5
 _srcname=linux-${_commit}
 _kernelname=${pkgbase#linux}
 _desc="Raspberry Pi (Cirrus Logic)"
-pkgver=4.4.30
+pkgver=4.4.34
 pkgrel=1
 bfqver=v7r11
 arch=('armv6h' 'armv7h')
@@ -41,7 +41,7 @@ source_armv7h=("config-armv7h::http://github.com/archlinuxarm/PKGBUILDs/raw/${_c
                'config-armv7h.patch'
 	       'https://archlinuxarm.org/builder/src/brcmfmac43430-sdio.bin' 'https://archlinuxarm.org/builder/src/brcmfmac43430-sdio.txt')
 
-md5sums=('f6c952f46b25f685a4c12fc785943f88'
+md5sums=('543a835693e7a1eb1fda8015b4d7b63d'
          'SKIP'
          'SKIP'
          'c1d7fcfe88edb658375089c0a9cc1811'
