@@ -51,7 +51,7 @@ md5sums=('bdfd9fb0fd2cbf8bbac9193a82bc61a6'
          '60bc3624123c183305677097bcd56212'
          '71bc3a50eb404709ff78f393aed3d0e8'
          '4511272ed4336120645b68e74f75cb92')
-md5sums_armv6h=('20936b2a0a5197b6bbdaf084001b725c'
+md5sums_armv6h=('b1547b08d530a2363a8d794e547c6114'
                 '46304bd952f160509480fc0420c765e6')
 md5sums_armv7h=('23f92b73db9c4e517bda912c2002e9b8'
                 'ea4ca2a0cac5e7491ebd320a90572564'
