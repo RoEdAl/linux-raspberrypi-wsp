@@ -1,5 +1,15 @@
 # ArchLinux ARM kernel package with driver for Cirrus Logic/Wolfson Audio Card.
 
+----
+
+**Important note**:
+
+This project is **not maintained** anymore. The driver is now included in the official RPi reposityory (4.9 branch).
+
+Latest release: **4.4.49-1**.
+
+----
+
 Supported devices:
 
 * [Wolfson Audio Card](http://www.element14.com/wolfson) for Raspberry Pi B,
