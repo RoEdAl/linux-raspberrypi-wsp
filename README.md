@@ -97,7 +97,7 @@ Follow [this link](http://headless.audio) for detailed instructions.
     * [Driver fixes and updates to kernel 3.18.16 and 4.0.5](http://www.element14.com/community/thread/43711/l/driver-fixes-and-updates-to-kernel-31816-and-405)
     * [Rpi2 + Cirrus/Element14 Audio Board + Arch Linux](http://www.element14.com/community/thread/48086/l/rpi2-cirruselement14-audio-board-arch-linux)
 * [RPi Linux driver for Wolfson / Cirrus Logic Audio Card](http://www.horus.com/~hias/cirrus-driver.html)
-    * [GitHub - 4.9 branch](http://github.com/HiassofT/rpi-linux/tree/cirrus-4.9.y)
+    * [GitHub - 4.9 branch](http://github.com/HiassofT/rpi-linux/tree/cirrus-ng-4.9.y)
     * [GitHub - 4.4 branch](http://github.com/HiassofT/rpi-linux/tree/cirrus-4.4.y)
     * [GitHub - 4.1 branch](http://github.com/HiassofT/rpi-linux/tree/cirrus-4.1.y)
 * [RuneAudio - Raspberry Pi2/3 with Cirrus Logic Audio Card](http://www.runeaudio.com/forum/raspberry-pi2-3-with-cirrus-logic-audio-card-t3837.html)
