@@ -4,7 +4,7 @@
 
 **Important note**:
 
-This project is **not maintained** anymore. The driver is now included in the official RPi reposityory (4.9 branch).
+This project is **not maintained** anymore. The driver is now included in the official RPi repository (4.9 branch). See [here](http://www.horus.com/~hias/cirrus-driver.html) and [here](https://www.element14.com/community/thread/57975) for more information.
 
 Latest release: **4.4.49-1**.
 
