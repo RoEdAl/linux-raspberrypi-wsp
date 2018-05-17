@@ -6,7 +6,7 @@
 
 This project is **not maintained** anymore. The driver is now included in the official RPi repository (4.9 branch). See [here](http://www.horus.com/~hias/cirrus-driver.html) and [here](https://www.element14.com/community/thread/57975) for more information.
 
-Latest release: **4.4.49-1**.
+Latest release: [4.4.49-1](//github.com/RoEdAl/linux-raspberrypi-wsp/releases/tag/v4.4.49-1).
 
 ----
 
@@ -35,9 +35,9 @@ card 0: sndrpiwsp [snd_rpi_wsp], device 0: WM5102 AiFi wm5102-aif1-0 []
 
 ----
 
-# Instalation of prepared packages.
+# ~~Instalation of prepared packages.~~
 
-Follow [this link](http://headless.audio) for detailed instructions.
+~~Follow [this link](http://headless.audio) for detailed instructions.~~
 
 # Build & installation from sources.
 
